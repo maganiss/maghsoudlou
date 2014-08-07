@@ -52,3 +52,6 @@ gem 'merit'
 gem 'fullcalendar_engine'
 gem "cancan"
 gem 'kaminari'
+gem 'mysql2'
+gem 'unicorn'
+gem 'capistrano'
