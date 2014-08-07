@@ -1,0 +1,28 @@
+	<% @tempnot = @notification.notifiable_type.classify.constantize.find(@notification.notifiable_id) %>
+	<b>عنوان: </b><%= @tempnot.title%><br>
+	<b>موضوع: </b><%= @tempnot.fa_field%><br>
+  <b>چکیده: </b><%= @tempnot.abstract%><br>
+  	<b>امتیاز خبرگی: </b>
+  	<% if @tempnot.expert_score.blank? %>
+  	[امتیازی وارد نشده است.]
+  	<br>
+  	<% else %>
+  		<%= @tempnot.expert_score%><br>
+  	<% end %>
+  
+	<span style="float:left">
+
+	<% if friends_with?(current_user,User.find(@tempnot.user_id)) %>
+		<%= form_for(@tempnot) do |f| %>
+			<span class="field">امتیاز خبرگی 
+				<%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
+			</span>
+			<span class="actions">
+				<%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
+			</span>
+		<% end %>
+	<% end %>
+
+	</span>
+  
+  <i class="icon-file" ></i> <%= link_to "دریافت فایل", @tempnot.attachment.url%><br>

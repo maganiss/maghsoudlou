@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Decision:</strong>
+  <%= @proposal.user_id %>
+</p>
+
+<p>
+  <strong>proposal title:</strong>
+  <%= @proposal.title %>
+</p>
+
+<p>
+  <strong>proposal abstract</strong>
+  <%= @proposal.abstract %>
+</p>
+
+<p>
+  <strong>proposal attachment:</strong>
+  <%=link_to @proposal.attachment_file_name, @proposal.attachment.url%>
+</p>
+
+<p>
+  <strong>proposal expert score:</strong>
+  <%=link_to @proposal.expert_score%>
+</p>
+
+<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
+<%= link_to 'Back', proposals_path %>

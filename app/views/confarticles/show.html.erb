@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @confarticle.user_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @confarticle.title %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @confarticle.abstract %>
+</p>
+
+<p>
+  <strong>En field:</strong>
+  <%= @confarticle.en_field %>
+</p>
+
+<p>
+  <strong>Fa field:</strong>
+  <%= @confarticle.fa_field %>
+</p>
+
+<p>
+  <strong>Conf name:</strong>
+  <%= @confarticle.conf_name %>
+</p>
+
+<p>
+  <strong>Conf date:</strong>
+  <%= @confarticle.conf_date %>
+</p>
+
+<p>
+  <strong>Conf location:</strong>
+  <%= @confarticle.conf_location %>
+</p>
+
+<%= link_to 'Edit', edit_confarticle_path(@confarticle) %> |
+<%= link_to 'Back', confarticles_path %>

@@ -1,0 +1,67 @@
+<%= form_for(@journalarticle) do |f| %>
+  <% if @journalarticle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@journalarticle.errors.count, "error") %> prohibited this journalarticle from being saved:</h2>
+
+      <ul>
+      <% @journalarticle.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+ <%= f.hidden_field :user_id, :value => current_user.id %>
+    عنوان<br>
+ <%= f.text_field :title ,:class => "form-control " %>
+  </div>
+موضوع به انگلیسی<br>
+  <div class="field">
+  	
+ <%= f.text_field :en_field  ,:class => "form-control "%>
+  </div>
+  
+موضوع به فارسی<br>
+<div class="field">
+  	
+ <%= f.text_field :fa_field  ,:class => "form-control "%>
+  </div>
+
+
+نام مجله<br>
+  <div class="field">
+    <%= f.text_field :journal_name  ,:class => "form-control "%>
+  </div>
+  
+سال انتشار<br>
+  <div class="field">
+    <%= f.number_field :journal_publishyear  ,:class => "form-control "%>
+  </div>
+
+شماره مجله<br>
+  <div class="field">
+    <%= f.number_field :journal_volume  ,:class => "form-control "%>
+  </div>
+صفحات<br>
+  <div class="field">
+    <%= f.text_field :journal_pages  ,:class => "form-control "%>
+  </div>
+
+چکیده<br>
+  <div class="field">
+  	
+ <%= f.text_area :abstract ,:class => "form-control " %>
+  </div>
+  
+آپلود فایل:<br>
+<%= f.file_field :attachment %>
+
+
+	<br>
+  <div class="actions">
+     <%= f.submit "ثبت مقاله", :class => "btn btn-primary" %>
+  </div>
+<% end %>
+

@@ -1,0 +1,26 @@
+<%= form_for(@proposal) do |f| %>
+  <% if @proposal.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@proposal.errors.count, "error") %> prohibited this proposal from being saved:</h2>
+
+      <ul>
+      <% @proposal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+امتیاز خبرگی<br>
+  <div class="field">
+  	
+ <%= f.text_field :expert_score  ,:class => "form-control "%>
+  </div>
+  
+  
+	<br>
+  <div class="actions">
+     <%= f.submit "ثبت پروپوزال", :class => "btn btn-primary" %>
+  </div>
+<% end %>

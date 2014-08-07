@@ -1,0 +1,28 @@
+<div style="background-color:#EBEBE0">
+	<span id='like-<%= @notification.id%>'>
+		<%= render 'likes/like_button', :object => @notification%>
+	
+	</span>
+		<span id='like-counter-<%= @notification.id%>'><%= render :partial => 'likes/like_counter', :object => @notification %></span>
+	<% if @notification.user == current_user %>
+
+
+
+		
+	<%= link_to  notification_path(@notification), :method => :delete , :class=>'pull-left' do %>
+	<i class="icon-trash" ></i>
+	<%end%>
+
+	
+
+
+	<% end %>
+	
+	<% @commentable = @notification.notifiable_type.classify.constantize.find(@notification.notifiable_id)%>
+	<span id='comment-counter-<%= @commentable.id%>'><%= render :partial => 'comments/comment_counter', :object => @commentable %></span>
+	<%= render :partial => "comments/post_comment" , :object => @commentable%>
+	
+
+
+
+</div>

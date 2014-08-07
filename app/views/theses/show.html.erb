@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @thesis.user_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @thesis.title %>
+</p>
+
+<p>
+  <strong>Fa field:</strong>
+  <%= @thesis.fa_field %>
+</p>
+
+<p>
+  <strong>En field:</strong>
+  <%= @thesis.en_field %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @thesis.abstract %>
+</p>
+
+<p>
+  <strong>Professor:</strong>
+  <%= @thesis.professor %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= @thesis.attachment %>
+</p>
+
+<%= link_to 'Edit', edit_thesis_path(@thesis) %> |
+<%= link_to 'Back', theses_path %>

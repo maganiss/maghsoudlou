@@ -1,0 +1,18 @@
+class Profile < ActiveRecord::Base
+belongs_to :user
+has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "default.jpg"
+validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+	def bubble_sort_users
+			@profiles = Profile.all
+			@users = User.all
+		  @users.each_index do |i|
+		  (@users.length - i - 1).times do |job|
+		      if @users[job].points > @users[job + 1].points
+		      @users[job], @users[job + 1] = @users[job + 1], @users[job]
+		      end
+		  end
+		  end
+	end
+
+end

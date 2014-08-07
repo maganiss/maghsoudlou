@@ -1,0 +1,23 @@
+<div class="timeline-item timeline-comment clearfix" >
+<!--	<span class="timeline-info"> -->
+		<!--<%= image_tag @comment.user.profile.profile_name%> -->
+	<!--</span> -->
+	<div class="widget-box transparent">
+		<div class="widget-header widget-header-small hidden"></div>
+
+		<div class="widget-body">
+			<div class="widget-main">
+				<span id="content-<%= @comment.id%>"><%= link_to @comment.user.profile.profile_name, profile_path(@comment.user.profile)%> : <%= @comment.comment_content%></span>
+
+
+			<% if @notification.user == current_user %>
+				<%= link_to comment_path(@comment), :method => :delete, :remote => true, :class => 'pull-left' do %>
+					<i class="icon-trash"></i>
+				<%end%>
+			<% end %>
+				
+
+			</div>
+		</div>
+	</div>
+</div>

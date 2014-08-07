@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @presentation.user_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @presentation.title %>
+</p>
+
+<p>
+  <strong>Fa field:</strong>
+  <%= @presentation.fa_field %>
+</p>
+
+<p>
+  <strong>En field:</strong>
+  <%= @presentation.en_field %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @presentation.abstract %>
+</p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @presentation.creator %>
+</p>
+
+<p>
+  <strong>Attachment:</strong>
+  <%= @presentation.attachment %>
+</p>
+
+<%= link_to 'Edit', edit_presentation_path(@presentation) %> |
+<%= link_to 'Back', presentations_path %>

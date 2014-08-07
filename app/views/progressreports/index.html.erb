@@ -1,0 +1,35 @@
+<h1>Listing progressreports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Abstract</th>
+      <th>En field</th>
+      <th>Fa field</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @progressreports.each do |progressreport| %>
+      <tr>
+        <td><%= progressreport.user_id %></td>
+        <td><%= progressreport.title %></td>
+        <td><%= progressreport.abstract %></td>
+        <td><%= progressreport.en_field %></td>
+        <td><%= progressreport.fa_field %></td>
+        <td><%= link_to 'Show', progressreport %></td>
+        <td><%= link_to 'Edit', edit_progressreport_path(progressreport) %></td>
+        <td><%= link_to 'Destroy', progressreport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Progressreport', new_progressreport_path %>

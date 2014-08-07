@@ -1,0 +1,6 @@
+<%= render :partial => "home/sidebar"%>
+<%= render :partial => "home/mainbar"%>
+
+
+
+  

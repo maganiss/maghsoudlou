@@ -1,0 +1,68 @@
+<div class="col-md-7" style="padding-top:70px;">  
+	<div class="panel panel-default"  style="overflow:hidden">
+		<div class="panel-heading"><h4>وضعیت امتیازات</h4></div>
+		<div class="panel-body">
+		<div class = "col-md-4">
+			<% point_view = "امتیاز اشتراک دانش: #{current_user.points}" %>
+			<a class="btn btn-lg btn-success" data-toggle="modal" data-target="#contact" data-original-title>
+				<%= point_view%>	
+			</a>
+				
+			<%= render :partial => 'home/points_modal'%>
+		  <%= link_to "مدال های شما: ۳", new_profile_path, :class =>"btn btn-lg btn-warning" %><br>
+
+		        			
+		        			
+		</div>
+		<div class = "col-md-8">
+		<br>
+		        <div class="btn btn-xs btn-danger"></div>امتیاز اشتراک دانش<br>
+		        <div class="btn btn-xs btn-info"></div>امتیاز خبرگی<br><br>
+
+		  <div class="progress">
+        <div class="progress-bar progress-bar-info" style="width: 35%"><span class="sr-only">35% Complete (info)</span></div>
+        <div class="progress-bar progress-bar-danger" style="width: 65%"><span class='sr-only'>65% Complete (danger)</span></div>
+      </div>
+
+		</div>
+	  </div>
+	</div>
+		
+	<div class="panel panel-default"  style="overflow:hidden">
+	   <div class="panel-body">
+			<%= render partial: "home/flash_messages", flash: flash %> 
+  <div class="col-md-12">
+
+
+        <div class="tabbable">
+          <ul class="nav nav-tabs" style="padding-right:0px;">
+            <li class="active"><a href="#one" data-toggle="tab">پروپوزال</a></li>
+            <li><a href="#two" data-toggle="tab">گزارش فنی</a></li>
+            <li><a href="#twee" data-toggle="tab">گزارش پیشرفت</a></li>
+            <li><a href="#four" data-toggle="tab">پایان نامه</a></li>
+            <li><a href="#five" data-toggle="tab">مقاله ژورنال</a></li>
+            <li><a href="#six" data-toggle="tab">مقاله کنفرانس</a></li>
+            <li><a href="#seven" data-toggle="tab">ارائه</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="one"><%= render :partial => 'proposals/form'%></div>
+            <div class="tab-pane" id="two">	<%= render :partial => 'techreports/form' %></div>
+            <div class="tab-pane" id="twee"><%= render :partial => 'progressreports/form' %></div>
+            <div class="tab-pane" id="four"><%= render :partial => 'theses/form' %></div>
+            <div class="tab-pane" id="five"><%= render :partial => 'journalarticles/form' %></div>
+            <div class="tab-pane" id="six"><%= render :partial => 'confarticles/form' %></div>
+            <div class="tab-pane" id="seven"><%= render :partial => 'presentations/form' %></div>
+           </div>
+        </div>
+        
+          
+  </div>
+		   
+ 	  </div>
+	</div>
+</div>
+
+	<%= render :partial => 'profiles/leaderboard'%>
+	<%= render :partial => 'home/events'%>
+
+  <body class="bgbook"></body>

@@ -1,0 +1,8 @@
+<% if @profile.blank? %> <%@profile = current_user.profile%><% end %>
+<% if !@profile.blank? %>
+<div class="col-md-2" style="padding-top:70p">
+	<%= render :partial => "profiles/ratingcard"%>
+	<%= render :partial => "friendships/followed", :object => @profile%>
+</div>
+
+<% end %>

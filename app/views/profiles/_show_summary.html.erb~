@@ -1,0 +1,6 @@
+<%= image_tag @profile.avatar(:thumb) , :size => "150x150" , :class => "img-responsive", :style => "overflow:hidden; border-radius:90%"%>
+<br>
+<p><b><%= @profile.profile_name %></b> </p>
+<p>	جنسیت:  <b> <%if @profile.profile_gender === 0 %> زن <%else%> مرد <%end%> </b> </p>
+<p>	وضعیت تحصیلی:  <b><%= @profile.profile_gradstat %></b> </p>
+<p>	سن:  <b><%=  Time.now.year - @profile.profile_birth_date.year + 1 %></b> </p>

@@ -1,0 +1,3 @@
+$('#comment-end-<%= @comment.commentable_id%>').append("<%= escape_javascript(render(:partial => 'comment_item', :object => @comment)) %>");
+$("#comment-content-<%= @comment.commentable_id%>").val('');
+$("#comment-counter-<%= @comment.commentable_id%>").html("<%= escape_javascript(render(:partial => 'comment_counter')) %>");

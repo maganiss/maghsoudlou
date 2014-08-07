@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  title: MyString
+  abstract: MyText
+  en_field: MyString
+  fa_field: MyString
+  journal_name: MyString
+  journal_publishyear: 1
+  journal_volume: 1
+  journal_pages: MyString
+
+two:
+  user_id: 1
+  title: MyString
+  abstract: MyText
+  en_field: MyString
+  fa_field: MyString
+  journal_name: MyString
+  journal_publishyear: 1
+  journal_volume: 1
+  journal_pages: MyString

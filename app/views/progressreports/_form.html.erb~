@@ -1,0 +1,49 @@
+<%= form_for(@progressreport) do |f| %>
+  <% if @progressreport.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@progressreport.errors.count, "error") %> prohibited this progressreport from being saved:</h2>
+
+      <ul>
+      <% @progressreport.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+ <%= f.hidden_field :user_id, :value => current_user.id %>
+    عنوان<br>
+ <%= f.text_field :title %>
+  </div>
+موضوع به انگلیسی<br>
+  <div class="field">
+  	
+ <%= f.text_field :en_field %>
+  </div>
+  
+موضوع به فارسی<br>
+<div class="field">
+  	
+ <%= f.text_field :fa_field %>
+  </div>
+
+
+چکیده<br>
+  <div class="field">
+  	
+ <%= f.text_area :abstract %>
+  </div>
+
+  
+
+آپلود فایل:<br>
+<%= f.file_field :attachment %>
+
+
+	<br>
+  <div class="actions">
+     <%= f.submit "ثبت گزارش پیشرفت", :class => "btn btn-primary" %>
+  </div>
+<% end %>

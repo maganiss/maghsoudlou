@@ -1,0 +1,76 @@
+<%= render :partial => 'home/sidebar' %>
+<div class="col-md-7" style="padding-top:70px;">
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4>ایجاد یادآور رویداد جدید</h4></div>
+		<div class="panel-body">
+			<div class="container"> <br>
+
+				<%= form_for(@event_reminder) do |f| %>
+					<% if @event_reminder.errors.any? %>
+						<div id="error_explanation">
+							<h2><%= pluralize(@event_reminder.errors.count, "error") %> prohibited this event_reminder from being saved:</h2>
+
+							<ul>
+							<% @event_reminder.errors.full_messages.each do |msg| %>
+								<li><%= msg %></li>
+							<% end %>
+							</ul>
+						</div>
+					<%end%>
+
+					
+				<div class="field">
+				 		<%= f.hidden_field :user_id, :value => current_user.id %>
+				</div></div>
+		   
+		   
+				<div class="control-group">
+				  <label class="control-label" for="passwordinput">موضوع رویداد:</label>
+					<div class="controls">
+							<%= f.text_field :subject , :class => "form-control input-medium" %>
+					</div>
+				</div>
+			
+				<div class="control-group">
+				  <label class="control-label" for="passwordinput">توضیح رویداد:</label>
+					<div class="controls">
+							<%= f.text_area :description , :class => "form-control input-medium" %>
+					</div>
+				</div>
+			
+				<div class="control-group">
+				  <label class="control-label" for="passwordinput">زمان رویداد:</label>
+					<div class="controls">
+							<%= f.datetime_select :event_date , :class => "form-control input-medium" %>
+					</div>
+				</div>
+			
+				<div class="control-group">
+				  <label class="control-label" for="passwordinput">زمان یادآوری رویداد:</label>
+					<div class="controls">
+							<%= f.datetime_select :reminder_date , :class => "form-control input-medium" %>
+					</div>
+				</div>
+				<br>
+				<div class="field">
+					<%= f.label :publicity,"رویداد عمومی باشد؟" %> <br>
+					<%= f.label :publicity, "بله", :value => "public"  %>
+					<%= f.radio_button :publicity, true, :checked => true %><br>
+					<%= f.label :publicity, "خیر", :value => "private" %>
+					<%= f.radio_button :publicity, false %>
+				</div>
+				
+				<div class="control-group">
+				   <label class="control-label" for="signin"></label>
+				      <div class="controls">
+				          <div><%= f.submit "ثبت", :class => "btn btn-primary", :id =>"signin" %> <%= link_to 'بازگشت  ', :back %></div>  
+				      </div>
+				</div>
+
+				<%end%>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>

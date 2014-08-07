@@ -1,0 +1,47 @@
+<%= render :partial => 'home/sidebar' %>
+<div class="col-md-7" style="padding-top:70px;">
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4>مشاهده یادآور رویداد</h4></div>
+		<div class="panel-body">
+			<div class="container"> <br>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>کاربر:</strong>
+  <%= @event_reminder.user_id %>
+</p>
+
+<p>
+  <strong>موضوع:</strong>
+  <%= @event_reminder.subject %>
+</p>
+
+<p>
+  <strong>توضیح:</strong>
+  <%= @event_reminder.description %>
+</p>
+
+<p>
+  <strong>زمان رویداد:</strong>
+  <%= @event_reminder.event_date %>
+</p>
+
+<p>
+  <strong>زمان یادآور:</strong>
+  <%= @event_reminder.reminder_date %>
+</p>
+
+<p>
+  <strong>عمومی:</strong>
+  <% if @event_reminder.publicity == "false"%> خیر <% end %>
+  <% if @event_reminder.publicity == "true"%> بله <%end%>
+</p>
+
+      <%= link_to 'ویرایش', edit_event_reminder_path%>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>

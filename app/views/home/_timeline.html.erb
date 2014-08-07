@@ -1,0 +1,17 @@
+	<% if !@self_notifications.blank? %>
+			<%for notification in @self_notifications %>
+					<% if notification.notifiable_type == 'Proposal' %>
+							<% @notification = notification %>		
+							<%= render :partial => "notifications/header"%>
+							<%= render :partial => "proposals/proposal_notifs", :object => @notification %>
+							<%= render :partial => "notifications/footer" , :object => @notification%>	
+					<% else %>
+							<% @notification = notification %>		
+							<%= render :partial => "notifications/header"%>
+							<%= render :partial => "techreports/techreports_notifs" , :object => @notification %>
+							<%= render :partial => "notifications/footer" , :object => @notification%>	
+					<% end %>
+			<br>
+			<% end %>			
+	<% end %>
+

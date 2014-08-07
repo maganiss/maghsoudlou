@@ -1,0 +1,39 @@
+<h1>Listing theses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Fa field</th>
+      <th>En field</th>
+      <th>Abstract</th>
+      <th>Professor</th>
+      <th>Attachment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @theses.each do |thesis| %>
+      <tr>
+        <td><%= thesis.user_id %></td>
+        <td><%= thesis.title %></td>
+        <td><%= thesis.fa_field %></td>
+        <td><%= thesis.en_field %></td>
+        <td><%= thesis.abstract %></td>
+        <td><%= thesis.professor %></td>
+        <td><%= thesis.attachment %></td>
+        <td><%= link_to 'Show', thesis %></td>
+        <td><%= link_to 'Edit', edit_thesis_path(thesis) %></td>
+        <td><%= link_to 'Destroy', thesis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Thesis', new_thesis_path %>

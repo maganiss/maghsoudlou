@@ -1,0 +1,128 @@
+<div class="col-md-12">
+	<% if !@self_notifications.blank? %>
+
+
+        <div class="tabbable">
+          <ul class="nav nav-tabs" style="padding-right:0px;">
+            <li class="active"><a href="#one" data-toggle="tab">پروپوزال</a></li>
+            <li><a href="#two" data-toggle="tab">گزارش فنی</a></li>
+            <li><a href="#twee" data-toggle="tab">گزارش پیشرفت</a></li>
+            <li><a href="#four" data-toggle="tab">پایان نامه</a></li>
+            <li><a href="#five" data-toggle="tab">مقاله ژورنال</a></li>
+            <li><a href="#six" data-toggle="tab">مقاله کنفرانس</a></li>
+            <li><a href="#seven" data-toggle="tab">ارائه</a></li>
+          </ul>
+
+          
+          <div class="tab-content">
+          
+            <div class="tab-pane active" id="one">
+							<%for notification in @self_notifications %>          
+							  <% @notification = notification %>
+					    	<% if @notification.notifiable_type == "Proposal" %>
+								<div class="panel panel-default"  style="overflow:hidden">
+									<div class="panel-body">
+									<%= render :partial => "notifications/header" %>
+									<%= render :partial => "proposals/proposal_notifs", :object => @notification %><br>
+									<%= render :partial => "notifications/footer" %>
+									</div>
+								</div>
+
+				      	<% end %>
+				      <% end %>
+		        </div>
+		        
+		        <div class="tab-pane" id="two">
+							<%for notification in @self_notifications %>          
+							  <% @notification = notification %>
+					    	<% if @notification.notifiable_type == "Techreport" %>
+								<div class="panel panel-default"  style="overflow:hidden">
+									<div class="panel-body">
+					    	<%= render :partial => "notifications/header" %>
+					    	<%= render :partial => "techreports/techreport_notifs", :object => @notification %><br>
+					    	<%= render :partial => "notifications/footer" %>
+								</div>
+					    	</div>
+				      	<% end %>
+				      <% end %>
+		        </div> 
+		        
+		        
+		        <div class="tab-pane" id="twee">
+							<%for notification in @self_notifications %>          
+							  <% @notification = notification %>
+					    	<% if @notification.notifiable_type == "Progressreport" %>
+								<div class="panel panel-default"  style="overflow:hidden">
+									<div class="panel-body">
+					    	<%= render :partial => "notifications/header" %>
+					    	<%= render :partial => "progressreports/progressreport_notifs", :object => @notification %><br>
+					    	<%= render :partial => "notifications/footer" %>
+					    	</div></div>
+				      	<% end %>
+				      <% end %>
+		        </div> 
+		        
+		        
+		        <div class="tab-pane" id="four">
+							<%for notification in @self_notifications %>          
+							  <% @notification = notification %>
+					    	<% if @notification.notifiable_type == "Thesis" %>
+								<div class="panel panel-default"  style="overflow:hidden">
+									<div class="panel-body">
+					    	<%= render :partial => "notifications/header" %>
+					    	<%= render :partial => "theses/thesis_notifs", :object => @notification %><br>
+					    	<%= render :partial => "notifications/footer" %>
+					    	</div></div>
+				      	<% end %>
+				      <% end %>
+		        </div> 
+		        
+		        <div class="tab-pane" id="five">
+							<%for notification in @self_notifications %>          
+							  <% @notification = notification %>
+					    	<% if @notification.notifiable_type == "Journalarticle" %>
+								<div class="panel panel-default"  style="overflow:hidden">
+									<div class="panel-body">
+					    	<%= render :partial => "notifications/header" %>
+					    	<%= render :partial => "journalarticles/journalarticle_notifs", :object => @notification %><br>
+					    	<%= render :partial => "notifications/footer" %>
+					    	</div></div>
+				      	<% end %>
+				      <% end %>
+		        </div> 
+		        
+		        
+		        <div class="tab-pane" id="six">
+							<%for notification in @self_notifications %>          
+							  <% @notification = notification %>
+					    	<% if @notification.notifiable_type == "Confarticle" %>
+								<div class="panel panel-default"  style="overflow:hidden">
+									<div class="panel-body">
+					    	<%= render :partial => "notifications/header" %>
+					    	<%= render :partial => "confarticles/confarticle_notifs", :object => @notification %><br>
+					    	<%= render :partial => "notifications/footer" %>
+					    	</div></div>
+				      	<% end %>
+				      <% end %>
+		        </div> 
+		        
+		        
+		        <div class="tab-pane" id="seven">
+							<%for notification in @self_notifications %>          
+							  <% @notification = notification %>
+					    	<% if @notification.notifiable_type == "Presentation" %>
+								<div class="panel panel-default"  style="overflow:hidden">
+									<div class="panel-body">
+					    	<%= render :partial => "notifications/header" %>
+					    	<%= render :partial => "presentations/presentation_notifs", :object => @notification %><br>
+					    	<%= render :partial => "notifications/footer" %>
+					    	</div></div>
+				      	<% end %>
+				      <% end %>
+		        </div> 
+		         
+		      </div>
+		    </div>
+	<% else %> هیچ سندی برای نمایش موجود نیست.<% end %>
+</div>
+

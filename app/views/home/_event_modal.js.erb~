@@ -1,0 +1,4 @@
+$('<your-selector>').click(function(event) {
+    FullcalendarEngine.Form.display()
+    event.preventDefault();
+  });

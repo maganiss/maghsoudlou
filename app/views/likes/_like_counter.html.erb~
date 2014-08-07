@@ -1,0 +1,4 @@
+<a data-toggle="collapse" data-parent="#accordion" href="#likes<%= @notification.id%>">
+	<i class="icon-like blue"></i>
+	<span style='font-size:70%;'>[<%= @notification.notifiable_id.likes.count%>]</span>
+</a>

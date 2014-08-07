@@ -1,0 +1,46 @@
+<!--<%= form_for 'user', :url => '/users', :method => :post do |f| %>
+
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+
+<%= render "devise/shared/links" %>-->
+
+<%= form_for 'user', :url => '/users', :method => :post do |f| %>
+   <div class="control-group">
+      <label class="control-label" for="userid">ایمیل:</label>
+          <div class="controls">
+            <%= f.email_field :email, :autofocus => true, :class => "form-control input-medium", :id =>"userid"  %>
+          </div>
+   </div>
+
+    <div class="control-group">
+       <label class="control-label" for="passwordinput">رمز عبور:</label>
+          <div class="controls">
+            <%= f.password_field :password, :id =>"passwordinput", :class => "form-control input-medium" %>
+          </div>
+    </div>
+
+    <div class="control-group">
+       <label class="control-label" for="passwordinput">تکرار رمز عبور:</label>
+          <div class="controls">
+            <%= f.password_field :password_confirmation, :id =>"passwordinput", :class => "form-control input-medium" %>
+          </div>
+    </div>
+
+
+    <div class="control-group">
+       <label class="control-label" for="signin"></label>
+          <div class="controls">
+              <div><%= f.submit "ورود", :class => "btn btn-primary", :id =>"signin" %></div>  
+          </div>
+    </div>
+<% end %> 

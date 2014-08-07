@@ -1,0 +1,15 @@
+class Consultation < ActiveRecord::Base
+belongs_to :status
+belongs_to :user
+
+	def self.calc_BMI(user)
+		@status = user.statuses.find(:first, :order => 'created_at DESC')
+		if @status.blank?
+			@number = @status.status_weight/((user.profile.profile_height/100)*(user.profile.profile_height/100))
+			@BMI = @number.round(2)
+		else
+			@BMI = 0
+		end
+	end
+
+end

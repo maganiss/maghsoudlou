@@ -1,0 +1,12 @@
+<div class="col-md-3" style="padding-top:70px;" >	
+	<div class="panel panel-default"  style="overflow:hidden">
+		<div class="panel-heading"><h4>محتواهای امتیازدهی نشده</h4></div>
+		<div class="panel-body" >
+			<%= paginate @fffs%><br>
+			<% for fff in @fffs%>
+			<% @tempnot = fff.notifiable_type.classify.constantize.find(fff.notifiable_id) %>
+			<%= User.find_by_id(@tempnot.user_id).profile.profile_name%> <%= @tempnot.title %> <% if @tempnot.expert_score.blank?%> yes <% end %><br>
+			<% end %>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @comment.user_id %>
+</p>
+
+<p>
+  <strong>Decision:</strong>
+  <%= @comment.decision_id %>
+</p>
+
+<p>
+  <strong>Target:</strong>
+  <%= @comment.target_id %>
+</p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @comment.exercise_id %>
+</p>
+
+<p>
+  <strong>Intake:</strong>
+  <%= @comment.intake_id %>
+</p>
+
+<p>
+  <strong>Emotion:</strong>
+  <%= @comment.emotion_id %>
+</p>
+
+<p>
+  <strong>Comment content:</strong>
+  <%= @comment.comment_content %>
+</p>
+
+<%= link_to 'Edit', edit_comment_path(@comment) %> |
+<%= link_to 'Back', comments_path %>

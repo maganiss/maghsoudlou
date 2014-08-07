@@ -1,0 +1,21 @@
+<% if current_user.id != @profile.user_id %>
+				<div class="col-md-3">
+
+<div id='friendshipsbutton'>
+<% if friends_with?(current_user,@profile.user)%>
+<%= link_to (url_for({:controller => :friendships, :action => :remove_friend, :requester_id => current_user.id, :id => 1,:responder_id => @profile.user.id})), :class => "btn btn-sm btn-block btn-warning", :remote => true do%>
+<i class="icon-plus-sign bigger-120"></i>
+	<%=t :remove_as_a_friend%>
+<%end%>
+<%else%>
+<%= link_to (url_for({:controller => :friendships, :action => :add_friend, :requester_id => current_user.id, :id => 1,:responder_id => @profile.user.id})), :class => "btn btn-sm btn-block btn-success", :remote => true do%>
+<i class="icon-plus-sign bigger-120"></i>
+	<%=t :add_as_a_friend%>
+<%end%>
+<%end%>
+</div>
+</div></div></div>
+<%else%>
+<%end%>
+
+

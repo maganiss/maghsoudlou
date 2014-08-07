@@ -1,0 +1,1 @@
+$("#like-<%= @notification.id%>").html("<%= escape_javascript(render(:partial => 'like_button')) %>");

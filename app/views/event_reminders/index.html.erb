@@ -1,0 +1,42 @@
+<%= render :partial => 'home/sidebar' %>
+<div class="col-md-7" style="padding-top:70px;">
+	<div class="panel panel-default">
+		<div class="panel-heading"><h4>لیست یادآور های رویداد</h4></div>
+		<div class="panel-body">
+			<div class="container"> <br>
+<div class="table-responsive col-md-7">
+<table class = "table table-bordered" >
+  <thead>
+    <tr>
+      <th>موضوع</th>
+      <th>تاریخ رویداد</th>
+      <th>تاریخ یادآور</th>
+      <th>عمومی</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @event_reminders.each do |event_reminder| %>
+    <% if event_reminder.publicity == "true" or event_reminder.user_id == current_user.id %>
+      <tr>
+        <td><%= link_to event_reminder.subject, event_reminder %></td>
+        <td><%= event_reminder.event_date %></td>
+        <td><%= event_reminder.reminder_date %></td>
+        <td><%= event_reminder.publicity %></td>
+        <td><%= link_to 'ویرایش', edit_event_reminder_path(event_reminder) %> / <%= link_to 'حذف', event_reminder, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table></div>
+
+
+
+
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>

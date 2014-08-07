@@ -1,0 +1,39 @@
+<h1>Listing presentations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Fa field</th>
+      <th>En field</th>
+      <th>Abstract</th>
+      <th>Creator</th>
+      <th>Attachment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @presentations.each do |presentation| %>
+      <tr>
+        <td><%= presentation.user_id %></td>
+        <td><%= presentation.title %></td>
+        <td><%= presentation.fa_field %></td>
+        <td><%= presentation.en_field %></td>
+        <td><%= presentation.abstract %></td>
+        <td><%= presentation.creator %></td>
+        <td><%= presentation.attachment %></td>
+        <td><%= link_to 'Show', presentation %></td>
+        <td><%= link_to 'Edit', edit_presentation_path(presentation) %></td>
+        <td><%= link_to 'Destroy', presentation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Presentation', new_presentation_path %>

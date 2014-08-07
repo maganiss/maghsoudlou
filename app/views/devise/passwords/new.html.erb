@@ -1,0 +1,23 @@
+<br><br><br>     
+  <div class="col-md-4"></div>
+  <div class="col-md-4" style="padding-top:70px;">
+    <div style="border:solid #D6D6D6;border-radius:2%;background-color:white">
+      <div class="panel-body">
+
+				<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+					<div style="background-color:#FFCCCC">
+						<%= devise_error_messages! %>
+					</div>
+
+					<div>
+					ایمیل خود را برای دریافت رمز عبور جدید وارد کنید:<br>
+					<%= f.email_field :email, :autofocus => true %></div><br>
+
+					<div><%= f.submit "ثبت"  , :class => "btn btn-primary"%></div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+  <div class="col-md-4"></div>
+  <body class="bgbook"></body>
+

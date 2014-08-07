@@ -1,0 +1,30 @@
+<br><br><br>     
+  <div class="col-md-4"></div>
+  <div class="col-md-4" style="padding-top:70px;">
+    <div style="border:solid #D6D6D6;border-radius:2%;padding:7%;background-color:white">
+        <div class="bs-example bs-example-tabs">
+            <ul id="myTab" class="nav nav-tabs">
+              <li class="active"><a href="#signin" data-toggle="tab">ورود </a></li>
+              <li class=""><a href="#signup" data-toggle="tab">ثبت نام</a></li>
+            </ul>
+        </div>
+
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade active in" id="signin">
+	    	     <%= render :partial =>'devise/sessions/signin' %>
+             <!-- Sign In Form -->
+          </div>
+
+
+          <div class="tab-pane fade" id="signup">
+	          <%= render :partial =>'devise/registrations/new' %>
+            <form class="form-horizontal">
+            <!-- Sign Up Form -->
+          </div>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-4"></div>
+  <body class="bgbook"></body>
+
+

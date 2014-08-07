@@ -1,0 +1,6 @@
+<h1>Editing progressreport</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @progressreport %> |
+<%= link_to 'Back', progressreports_path %>

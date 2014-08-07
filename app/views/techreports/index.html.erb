@@ -1,0 +1,35 @@
+<h1>Listing techreports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Abstract</th>
+      <th>En field</th>
+      <th>Fa field</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @techreports.each do |techreport| %>
+      <tr>
+        <td><%= techreport.user_id %></td>
+        <td><%= techreport.title %></td>
+        <td><%= techreport.abstract %></td>
+        <td><%= techreport.en_field %></td>
+        <td><%= techreport.fa_field %></td>
+        <td><%= link_to 'Show', techreport %></td>
+        <td><%= link_to 'Edit', edit_techreport_path(techreport) %></td>
+        <td><%= link_to 'Destroy', techreport, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Techreport', new_techreport_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  profile_name: MyString
+  profile_height: 1.5
+  profile_birth_date: 2014-04-08 11:12:57
+  profile_gender: 1
+  profile_rank: 1.5
+
+two:
+  user_id: 1
+  profile_name: MyString
+  profile_height: 1.5
+  profile_birth_date: 2014-04-08 11:12:57
+  profile_gender: 1
+  profile_rank: 1.5

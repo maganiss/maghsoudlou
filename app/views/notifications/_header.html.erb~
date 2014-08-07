@@ -1,0 +1,57 @@
+<div style="background-color:#EBEBE0">
+	
+	<%= @notification.notifiable_type.classify.constantize.find(@notification.notifiable_id).user.profile.profile_name%>
+	<span style="color:#4f4f4f; font-size:11px;"> <%= @notification.notifiable_type.classify.constantize.find(@notification.notifiable_id).created_at.year%>-<%= @notification.notifiable_type.classify.constantize.find(@notification.notifiable_id).created_at.month%>-<%= @notification.notifiable_type.classify.constantize.find(@notification.notifiable_id).created_at.day%> ساعت <%= @notification.notifiable_type.classify.constantize.find(@notification.notifiable_id).created_at.hour%>	و <%= @notification.notifiable_type.classify.constantize.find(@notification.notifiable_id).created_at.min%> دقیقه </span>
+
+<% tempnot = @notification.notifiable_type.classify.constantize.find(@notification.notifiable_id) %>
+
+	<% if @notification.user == current_user %>
+	
+	
+<% if @notification.notifiable_type == 'Proposal' %>
+		<%= link_to  edit_proposal_path(tempnot), :class=>'pull-left' do %>
+	<i class="icon-pencil" ></i>
+	<%end%>
+<% end %>
+
+
+<% if @notification.notifiable_type == 'Techreport' %>
+		<%= link_to  edit_techreport_path(@notification.notifiable_type.classify.constantize.find(@notification.notifiable_id)), :class=>'pull-left' do %>
+	<i class="icon-pencil" ></i>
+	<%end%>
+<% end %>
+
+
+<% if @notification.notifiable_type == 'Progressreport' %>
+		<%= link_to  edit_progressreport_path(@notification.notifiable_type.classify.constantize.find(@notification.notifiable_id)), :class=>'pull-left' do %>
+	<i class="icon-pencil" ></i>
+	<%end%>
+<% end %>
+
+<% if @notification.notifiable_type == 'Thesis' %>
+		<%= link_to  edit_thesis_path(@notification.notifiable_type.classify.constantize.find(@notification.notifiable_id)), :class=>'pull-left' do %>
+	<i class="icon-pencil" ></i>
+	<%end%>
+<% end %>
+
+<% if @notification.notifiable_type == 'Journalarticle' %>
+		<%= link_to  edit_journalarticle_path(@notification.notifiable_type.classify.constantize.find(@notification.notifiable_id)), :class=>'pull-left' do %>
+	<i class="icon-pencil" ></i>
+	<%end%>
+<% end %>
+
+<% if @notification.notifiable_type == 'Confarticle' %>
+		<%= link_to  edit_confarticle_path(@notification.notifiable_type.classify.constantize.find(@notification.notifiable_id)), :class=>'pull-left' do %>
+	<i class="icon-pencil" ></i>
+	<%end%>
+<% end %>
+
+<% if @notification.notifiable_type == 'Presentation' %>
+		<%= link_to  edit_presentation_path(@notification.notifiable_type.classify.constantize.find(@notification.notifiable_id)), :class=>'pull-left' do %>
+	<i class="icon-pencil" ></i>
+	<%end%>
+<% end %>
+</div>
+
+<% end %>
+<br>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @progressreport.user_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @progressreport.title %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @progressreport.abstract %>
+</p>
+
+<p>
+  <strong>En field:</strong>
+  <%= @progressreport.en_field %>
+</p>
+
+<p>
+  <strong>Fa field:</strong>
+  <%= @progressreport.fa_field %>
+</p>
+
+<%= link_to 'Edit', edit_progressreport_path(@progressreport) %> |
+<%= link_to 'Back', progressreports_path %>

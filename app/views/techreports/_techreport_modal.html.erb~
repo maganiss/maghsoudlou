@@ -1,0 +1,14 @@
+ <div class="modal fade" id="techreport" tabindex="-1" role="dialog" aria-labelledby="techreportLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="panel panel-primary">
+                          <div class="panel-heading">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                              <h4 class="panel-title" id="techreportLabel"> ثبت گزارش فنی</h4>
+							</div>
+						<div class="panel-body">	
+									<%= render :partial => 'techreports/form' ,:object => @techreports%>
+									</div>
+							  </div>
+							 </div>
+
+					  

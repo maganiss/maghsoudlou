@@ -1,0 +1,43 @@
+<h1>Listing journalarticles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Abstract</th>
+      <th>En field</th>
+      <th>Fa field</th>
+      <th>Journal name</th>
+      <th>Journal publishyear</th>
+      <th>Journal volume</th>
+      <th>Journal pages</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @journalarticles.each do |journalarticle| %>
+      <tr>
+        <td><%= journalarticle.user_id %></td>
+        <td><%= journalarticle.title %></td>
+        <td><%= journalarticle.abstract %></td>
+        <td><%= journalarticle.en_field %></td>
+        <td><%= journalarticle.fa_field %></td>
+        <td><%= journalarticle.journal_name %></td>
+        <td><%= journalarticle.journal_publishyear %></td>
+        <td><%= journalarticle.journal_volume %></td>
+        <td><%= journalarticle.journal_pages %></td>
+        <td><%= link_to 'Show', journalarticle %></td>
+        <td><%= link_to 'Edit', edit_journalarticle_path(journalarticle) %></td>
+        <td><%= link_to 'Destroy', journalarticle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Journalarticle', new_journalarticle_path %>

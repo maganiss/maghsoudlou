@@ -1,0 +1,17 @@
+<%= render :partial => 'home/sidebar' %>
+<div class="col-md-7" style="padding-top:70px;">
+	<div class="panel panel-default">
+    <div class="panel-heading"><h4>ویرایش پروپوزال</h4></div>
+    	<div class="panel-body">
+					<br>
+								<%= render partial: "home/flash_messages", flash: flash %> 
+					<% if current_user.id == @proposal.user_id %>
+					<%= render 'form' %>
+					<% end %>
+					<% if friends_with?(current_user,User.find(@proposal.user_id)) %>
+					<%= render 'form2'%>
+					<% end %>
+			</div>
+		</div>
+	</div>
+</div>

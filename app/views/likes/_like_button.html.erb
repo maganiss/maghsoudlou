@@ -1,0 +1,10 @@
+<% @like = current_user.likes.find(:first, :conditions => ["likable_id = ? and likable_type = ?", @notification.notifiable_id, @notification.notifiable_type])%>
+<% if @like.blank?%>
+<%= link_to likes_path(:likable_id => @notification.notifiable_id , :likable_type => @notification.notifiable_type, :notification_id =>@notification.id ), :remote => true, :method => :post do%>
+	     <i class="icon-thumbs-up light-pink"></i>
+<%end%>
+<%else%>
+<%= link_to like_path(@like, :notification_id =>@notification.id), :remote => true, :method => :delete do%>
+	     <i class="icon-thumbs-up pink"></i>
+<%end%>
+<%end%>

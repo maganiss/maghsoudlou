@@ -1,0 +1,55 @@
+<%= form_for(@thesis) do |f| %>
+  <% if @thesis.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@thesis.errors.count, "error") %> prohibited this thesis from being saved:</h2>
+
+      <ul>
+      <% @thesis.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+ <%= f.hidden_field :user_id, :value => current_user.id %>
+    عنوان<br>
+ <%= f.text_field :title %>
+  </div>
+موضوع به انگلیسی<br>
+  <div class="field">
+  	
+ <%= f.text_field :en_field %>
+  </div>
+  
+موضوع به فارسی<br>
+<div class="field">
+  	
+ <%= f.text_field :fa_field %>
+  </div>
+
+
+چکیده<br>
+  <div class="field">
+  	
+ <%= f.text_area :abstract %>
+  </div>
+
+
+استاد راهنما<br>
+  <div class="field">
+  	
+ <%= f.text_field :professor %>
+  </div>
+  
+
+آپلود فایل:<br>
+<%= f.file_field :attachment %>
+
+
+	<br>
+  <div class="actions">
+     <%= f.submit "ثبت پایان نامه", :class => "btn btn-primary" %>
+  </div>
+<% end %>

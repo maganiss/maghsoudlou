@@ -1,0 +1,2 @@
+<% @in = true%>
+$("#comments<%= @commentable.id%>").replaceWith("<%= escape_javascript(render(:partial => 'post_comment', :object => [@commentable, @in])) %>");

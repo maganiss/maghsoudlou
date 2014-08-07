@@ -1,0 +1,5 @@
+class AddAttachmentToJournalarticle < ActiveRecord::Migration
+  def change
+    add_column :journalarticles, :attachment, :file
+  end
+end

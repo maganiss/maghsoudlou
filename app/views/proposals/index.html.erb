@@ -1,0 +1,34 @@
+<h1>Listing proposals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Decision</th>
+      <th>proposal type</th>
+      <th>proposal start date</th>
+      <th>proposal timetoreach</th>
+      <th>proposal is achieved</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @proposals.each do |proposal| %>
+      <tr>
+        <td><%= proposal.user_id %></td>
+        <td><%= proposal.title %></td>
+        <td><%= proposal.abstract %></td>
+        <td><%= proposal.attachment %></td>
+        <td><%= link_to 'Show', proposal %></td>
+        <td><%= link_to 'Edit', edit_proposal_path(proposal) %></td>
+        <td><%= link_to 'Destroy', proposal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New proposal', new_proposal_path %>

@@ -1,0 +1,70 @@
+<%= render :partial => "home/sidebar" %>
+<div class="col-md-8" style="padding-top:70px;">
+	<br><br>
+	<div class="col-md-8">
+		<% if !@friend_notification.blank? %>
+		<ul class="timeline">
+			<%for notification in @friend_notifications %>
+				<li>
+					<div class="timeline-badge"><i class="glyphicon glyphicon-check"></i></div>
+					<% if notification.notifiable_type == 'Emotion' %>
+		  			<div class="timeline-panel">
+						<div class="timeline-heading" >
+							<p>منتشر شده در
+							<%= notification.notifiable_type.classify.constantize.find(notification.notifiable_id).emotion_date%>
+							</p>
+						</div>
+				
+			
+
+
+							<a><i class="glyphicon glyphicon-comment"></i></a>
+
+
+							<a><%= link_to  notification_path(notification), :method => :delete do %>
+							<i class="glyphicon glyphicon-trash" style="float:left"></i>
+							<%end%></a>
+						</div>
+					</div>
+		
+				
+					<% else %>
+		  			<div class="timeline-panel" id="target-notif-main">			<!--Zahra-->
+						<div class="timeline-heading"  id="target-notif-head" >     <!--Zahra-->
+							<p>منتشر شده در
+							<%= notification.notifiable_type.classify.constantize.find(notification.notifiable_id).created_at%>
+							</p>
+						</div>
+				
+			
+						<div class="timeline-body">
+							<p>
+							<%if notification.notifiable_type.classify.constantize.find(notification.notifiable_id).target_type === 0 %> میزان کاهش وزن:<%else%>میزان افزایش وزن: <%end%>
+							<%= notification.notifiable_type.classify.constantize.find(notification.notifiable_id).target_amount%>
+							</p>
+						</div>
+
+						<div class="timeline-footer" id="target-notif-foot" >		<!--Zahra-->
+							<% @notification = notification%>
+							<div id='like-<%= @notification.id%>'>
+								<%= render 'likes/like_button', :object => @notification%>
+							</div>
+
+							<a><i class="glyphicon glyphicon-comment"></i></a>
+
+
+							<a><%= link_to  notification_path(notification), :method => :delete do %>
+							<i class="glyphicon glyphicon-trash" style="float:left"></i>
+							<%end%></a>
+						</div>
+					</div>
+					<% end %>
+				</li>
+			<% end %>
+			<% else %> 
+			<h4>مطلبی یافت نشد! احتمالا هنوز با کسی دوست نشده اید یا هیچ یک از دوستانتان مطلبی ارسال نکرده اند.</h4>
+		</ul>
+		<% end %>
+	</div>
+</div>
+

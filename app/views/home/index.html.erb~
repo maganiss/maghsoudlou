@@ -1,0 +1,6 @@
+<% if !user_signed_in? %>
+	<%=render :partial =>'home/welcome' %>
+<%else%>
+   <%= render :partial =>'home/userpage' %>
+<%end%>
+

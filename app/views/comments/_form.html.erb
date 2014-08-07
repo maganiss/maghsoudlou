@@ -1,0 +1,22 @@
+<div class="timeline-item timeline-comment clearfix" >
+	<div class="widget-box transparent">
+		<div class="widget-header widget-header-small hidden"></div>
+		<div class="widget-body">
+			<div class="widget-main">
+					<%= form_for Comment.new, :remote => true do |f| %>
+					<%= f.hidden_field :commentable_id, :value => @commentable.id%>
+					<%= f.hidden_field :commentable_type, :value => @commentable.class.name%>
+					<%= f.text_area :comment_content,:class => "form-control", :id => "comment-content-#{@commentable.id}"%>
+<div class="space-4"></div>
+					<div class='pull-left '>
+						<%= content_tag :button, :type => :submit, :class => "btn btn-primary btn-xs" do %>
+						<i class="icon-ok smaller-70"></i>
+						<%=t :submit%>
+						<% end %>
+					</div>
+					<% end %>
+				<div class="space-8"></div>
+			</div>
+		</div>
+	</div>
+</div>

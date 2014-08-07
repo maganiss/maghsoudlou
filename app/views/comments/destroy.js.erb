@@ -1,0 +1,3 @@
+<% @in = true%>
+$("#comments<%= @commentable.id%>").replaceWith("<%= escape_javascript(render(:partial => 'post_comment', :object => [@commentable, @in])) %>");
+$("#comment-counter-<%= @comment.commentable_id%>").html("<%= escape_javascript(render(:partial => 'comment_counter', :object => @commentable)) %>");

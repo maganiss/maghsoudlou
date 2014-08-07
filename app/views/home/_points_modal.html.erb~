@@ -1,0 +1,13 @@
+<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h4 class="panel-title" id="contactLabel"> امتیاز شما</h4>
+			</div>
+			<div class="panel-body">
+ئششکسیتسنسشتبمشنستبشمنت
+			</div>
+		</div>
+	</div>
+</div>

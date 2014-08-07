@@ -1,0 +1,56 @@
+<%= form_for(@presentation) do |f| %>
+  <% if @presentation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@presentation.errors.count, "error") %> prohibited this presentation from being saved:</h2>
+
+      <ul>
+      <% @presentation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+
+  <div class="field">
+ <%= f.hidden_field :user_id, :value => current_user.id %>
+    عنوان<br>
+ <%= f.text_field :title ,:class => "form-control " %>
+  </div>
+موضوع به انگلیسی<br>
+  <div class="field">
+  	
+ <%= f.text_field :en_field  ,:class => "form-control "%>
+  </div>
+  
+موضوع به فارسی<br>
+<div class="field">
+  	
+ <%= f.text_field :fa_field  ,:class => "form-control "%>
+  </div>
+
+
+چکیده<br>
+  <div class="field">
+  	
+ <%= f.text_area :abstract  ,:class => "form-control "%>
+  </div>
+
+
+پدیدآور<br>
+  <div class="field">
+    <%= f.text_field :creator  ,:class => "form-control "%>
+  </div>
+  
+
+آپلود فایل:<br>
+<%= f.file_field :attachment , :class => "btn-primary"%>
+
+
+	<br>
+  <div class="actions">
+     <%= f.submit "ثبت ارائه", :class => "btn btn-primary" %>
+  </div>
+<% end %>
+

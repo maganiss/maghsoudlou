@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @journalarticle.user_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @journalarticle.title %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @journalarticle.abstract %>
+</p>
+
+<p>
+  <strong>En field:</strong>
+  <%= @journalarticle.en_field %>
+</p>
+
+<p>
+  <strong>Fa field:</strong>
+  <%= @journalarticle.fa_field %>
+</p>
+
+<p>
+  <strong>Journal name:</strong>
+  <%= @journalarticle.journal_name %>
+</p>
+
+<p>
+  <strong>Journal publishyear:</strong>
+  <%= @journalarticle.journal_publishyear %>
+</p>
+
+<p>
+  <strong>Journal volume:</strong>
+  <%= @journalarticle.journal_volume %>
+</p>
+
+<p>
+  <strong>Journal pages:</strong>
+  <%= @journalarticle.journal_pages %>
+</p>
+
+<%= link_to 'Edit', edit_journalarticle_path(@journalarticle) %> |
+<%= link_to 'Back', journalarticles_path %>

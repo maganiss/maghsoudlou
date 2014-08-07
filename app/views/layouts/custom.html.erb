@@ -1,0 +1,23 @@
+<head>
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+  <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= content_for?(:title) ? yield(:title) : "سیستم مدیریت دانش" %></title>
+	<%= favicon_link_tag "favicon.png" %>
+  <%= stylesheet_link_tag    'application',  media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag 'application', "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="bgbook">
+
+
+<div class="col-md-12" style="padding-top:50px;">  
+	<div class="panel panel-default"  style="overflow:hidden">
+		<div class="panel-body">
+		سلام
+			<%= yield %>
+		</div>
+	</div>
+</div>
+
+</body>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @techreport.user_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @techreport.title %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @techreport.abstract %>
+</p>
+
+<p>
+  <strong>En field:</strong>
+  <%= @techreport.en_field %>
+</p>
+
+<p>
+  <strong>Fa field:</strong>
+  <%= @techreport.fa_field %>
+</p>
+
+<%= link_to 'Edit', edit_techreport_path(@techreport) %> |
+<%= link_to 'Back', techreports_path %>

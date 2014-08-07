@@ -1,0 +1,9 @@
+<div class="panel-collapse collapse <% if @in%> in <%end%>" id="comments<%= @commentable.id%>" >
+	<% for comment in @commentable.comments%>
+		<% @comment = comment%>
+		<%= render :partial => 'comments/comment_item', :object => @comment %>
+		<br>
+	<%end%>
+	<div id='comment-end-<%= @commentable.id%>'></div>
+	<%= render :partial => 'comments/form', :object => @commentable %>
+</div>

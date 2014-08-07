@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%= content_for?(:title) ? yield(:title) : "جامعه مجازی تناسب اندام" %></title>
+	<%= csrf_meta_tags %>
+	<%= favicon_link_tag "favicon.png" %>
+
+	<%= stylesheet_link_tag 'bootstrap', 'rtl'%>
+	<%= javascript_include_tag 'jquery.min','bootstrap.min','jq' , 'defaults' ,'holder' %>
+</head>
+
+
+
+<body >
+
+	<%= render :partial => "layouts/header"%>
+	<%= render :partial => "layouts/sidebar"%>
+	<%= render :partial => "layouts/container"%>
+	<%= render :partial => "layouts/footer"%>
+	<%= yield%>
+</body>
+</html>
+
+  

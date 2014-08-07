@@ -1,0 +1,25 @@
+<%= render :partial => "home/sidebar" %>
+<div class="col-md-8" style="padding-top:70px;">
+	<% if !@friend_notifications.blank? %>
+		<ul class="timeline">
+			<%for notification in @friend_notifications %>
+				<li>
+					<div class="badge"><%= image_tag notification.notifiable_type.classify.constantize.find(notification.notifiable_id).user.profile.avatar(:thumb) , :size => "150x150" , :class => "img-responsive", :style => "overflow:hidden; border-radius:50%"%></div>
+					<div class="timeline-panel">
+						<% @notification = notification %>
+						<%= render :partial => "notifications/header"%>						
+						<% if notification.notifiable_type == 'Emotion' %>
+							<%= render :partial => "emotions/emotion_notifs", :object => @notification %>
+						<% else %>
+							<%= render :partial => "targets/target_notifs" , :object => @notification %>	
+						<% end %>
+
+						<%= render :partial => "notifications/footer"%>	
+					</div>
+				</li>
+			<% end %>			
+		</ul>
+	<% else %> 
+		<h4>مطلبی یافت نشد! احتمالا هنوز با کسی دوست نشده اید یا هیچ یک از دوستانتان مطلبی ارسال نکرده اند.</h4>
+	<% end %>
+</div>
