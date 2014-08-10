@@ -64,7 +64,7 @@ class NotificationsController < ApplicationController
   def destroy
     @notification.destroy
     respond_to do |format|
-      format.html { redirect_to :back , notice: 'محتوا با موفقیت حذف شد.' }
+      format.html { redirect_to :back , notice: 'Content successfully added.' }
       format.json { head :no_content }
     end
   end

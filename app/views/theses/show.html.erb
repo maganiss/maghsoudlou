@@ -1,39 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-primary" style="padding-top:70px">
+                    <div class="panel-body">
+        <b>عنوان: </b><%= @thesis.title%><br>
+        <b>موضوع: </b><%= @thesis.fa_field%><br>
+  <b>چکیده: </b><%= @thesis.abstract%><br>
+        <b>امتیاز خبرگی: </b>
+        <% if @thesis.expert_score.blank? %>
+        [امتیازی وارد نشده است.]
+        <br>
+        <% else %>
+                <%= @thesis.expert_score%><br>
+        <% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @thesis.user_id %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @thesis.title %>
-</p>
 
-<p>
-  <strong>Fa field:</strong>
-  <%= @thesis.fa_field %>
-</p>
+        <span style="float:left">
 
-<p>
-  <strong>En field:</strong>
-  <%= @thesis.en_field %>
-</p>
 
-<p>
-  <strong>Abstract:</strong>
-  <%= @thesis.abstract %>
-</p>
+                <%= form_for(@thesis) do |f| %>
+                        <span class="field">امتیاز خبرگی
+                                <%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
+                        </span>
+                        <span class="actions">
+                                <%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
+                        </span>
+                <% end %>
 
-<p>
-  <strong>Professor:</strong>
-  <%= @thesis.professor %>
-</p>
 
-<p>
-  <strong>Attachment:</strong>
-  <%= @thesis.attachment %>
-</p>
+        </span>
 
-<%= link_to 'Edit', edit_thesis_path(@thesis) %> |
-<%= link_to 'Back', theses_path %>
+
+  <i class="icon-file" ></i> <%= link_to "دریافت فایل", @thesis.attachment.url%><br>
+                                </div>
+                  </div>
+

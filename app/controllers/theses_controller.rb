@@ -28,10 +28,10 @@ class ThesesController < ApplicationController
 	  @thesis.user_id = current_user.id
     respond_to do |format|
       if @thesis.save
-        format.html { redirect_to :back, notice: 'پایان نامه با موفقیت اضافه شد.' }
+        format.html { redirect_to :back, notice: 'Thesis was successfully added.'}
         format.json { render action: 'show', status: :created, location: @thesis }
       else
-      	format.html { redirect_to :back , notice: 'خطا در ایجاد پایان نامه:‌ لطفا همه فیلدها را پر کنید.' }
+      	format.html { redirect_to :back , notice: 'Error: Please fill in all the blank fields.' }
         #format.html { render action: 'new' }
         format.json { render json: @thesis.errors, status: :unprocessable_entity }
       end

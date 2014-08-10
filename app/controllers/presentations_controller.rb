@@ -28,10 +28,10 @@ class PresentationsController < ApplicationController
 	  @presentation.user_id = current_user.id
     respond_to do |format|
       if @presentation.save
-        format.html { redirect_to :back, notice: 'ارائه با موفقیت اضافه شد.' }
+        format.html { redirect_to :back, notice: 'Presentation was successfully added.' }
         format.json { render action: 'show', status: :created, location: @presentation }
       else
-        format.html { redirect_to :back , notice: 'خطا در ایجاد ارائه:‌ لطفا همه فیلدها را پر کنید.' }
+        format.html { redirect_to :back , notice: 'Error: Please fill in all the blank fields.' }
         #format.html { render action: 'new' }
         format.json { render json: @presentation.errors, status: :unprocessable_entity }
       end

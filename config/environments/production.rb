@@ -79,4 +79,6 @@ UserReady::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
   config.assets.precompile += %w( .svg .eot .woff .ttf)
+Paperclip.options.merge!(:command_path => "/usr/bin")
+
 end

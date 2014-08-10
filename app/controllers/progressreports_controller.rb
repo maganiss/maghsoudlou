@@ -28,10 +28,10 @@ class ProgressreportsController < ApplicationController
 	  @progressreport.user_id = current_user.id
     respond_to do |format|
       if @progressreport.save
-        format.html { redirect_to :back, notice: 'گزارش پیشرفت با موفقیت اضافه شد.' }
+        format.html { redirect_to :back, notice: 'Progress Report was successfully added.' }
         format.json { render action: 'show', status: :created, location: @progressreport }
       else
-      	format.html { redirect_to :back , notice: 'خطا در ایجاد گزارش پیشرفت:‌ لطفا همه فیلدها را پر کنید.' }
+      	format.html { redirect_to :back , notice: 'Error: please fill in all the blank fields.' }
         #format.html { render action: 'new' }
         format.json { render json: @progressreport.errors, status: :unprocessable_entity }
       end

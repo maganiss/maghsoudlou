@@ -1,29 +1,34 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-primary" style="padding-top:70px">
+		    <div class="panel-body">	
+	<b>عنوان: </b><%= @proposal.title%><br>
+	<b>موضوع: </b><%= @proposal.fa_field%><br>
+  <b>چکیده: </b><%= @proposal.abstract%><br>
+  	<b>امتیاز خبرگی: </b>
+  	<% if @proposal.expert_score.blank? %>
+  	[امتیازی وارد نشده است.]
+  	<br>
+  	<% else %>
+  		<%= @proposal.expert_score%><br>
+  	<% end %>
+  
 
-<p>
-  <strong>Decision:</strong>
-  <%= @proposal.user_id %>
-</p>
 
-<p>
-  <strong>proposal title:</strong>
-  <%= @proposal.title %>
-</p>
+	<span style="float:left">
 
-<p>
-  <strong>proposal abstract</strong>
-  <%= @proposal.abstract %>
-</p>
 
-<p>
-  <strong>proposal attachment:</strong>
-  <%=link_to @proposal.attachment_file_name, @proposal.attachment.url%>
-</p>
+		<%= form_for(@proposal) do |f| %>
+			<span class="field">امتیاز خبرگی 
+				<%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
+			</span>
+			<span class="actions">
+				<%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
+			</span>
+		<% end %>
 
-<p>
-  <strong>proposal expert score:</strong>
-  <%= @proposal.expert_score %>
-</p>
 
-<%= link_to 'Edit', edit_proposal_path(@proposal) %> |
-<%= link_to 'Back', proposals_path %>
+	</span>
+
+
+  <i class="icon-file" ></i> <%= link_to "دریافت فایل", @proposal.attachment.url%><br>
+				</div>
+		  </div>

@@ -1,3 +1,4 @@
+
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -54,4 +55,5 @@ gem "cancan"
 gem 'kaminari'
 gem 'mysql2'
 gem 'unicorn'
-gem 'capistrano'
+gem 'capistrano' , '~> 2.15'
+gem "net-ssh", "~> 2.7.0"

@@ -28,10 +28,10 @@ class ConfarticlesController < ApplicationController
 	  @confarticle.user_id = current_user.id
     respond_to do |format|
       if @confarticle.save
-        format.html { redirect_to :back, notice: 'مقاله کنفرانس با موفقیت اضافه شد.' }
+        format.html { redirect_to :back, notice: 'Conference article was successfully added.' }
         format.json { render action: 'show', status: :created, location: @confarticle }
       else
-        format.html { redirect_to :back , notice: 'خطا در ایجاد مقاله کنفرانس:‌ لطفا همه فیلدها را پر کنید.' }
+        format.html { redirect_to :back , notice: 'Error: Please fill in all the blank fields.' }
         #format.html { render action: 'new' }
         format.json { render json: @confarticle.errors, status: :unprocessable_entity }
       end

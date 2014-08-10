@@ -28,10 +28,10 @@ class JournalarticlesController < ApplicationController
 	  @journalarticle.user_id = current_user.id
     respond_to do |format|
       if @journalarticle.save
-        format.html { redirect_to :back, notice: 'مقاله ژورنال با موفقیت اضافه شد.' }
+        format.html { redirect_to :back, notice: 'Journalarticle was successfully added.' }
         format.json { render action: 'show', status: :created, location: @journalarticle }
       else
-      	format.html { redirect_to :back , notice: 'خطا در ایجاد مقاله ژورنال:‌ لطفا همه فیلدها را پر کنید.' }
+      	format.html { redirect_to :back , notice: 'Error: Please fill in all the blank fields.' }
         #format.html { render action: 'new' }
         format.json { render json: @journalarticle.errors, status: :unprocessable_entity }
       end

@@ -28,10 +28,10 @@ class ProposalsController < ApplicationController
 	  @proposal.user_id = current_user.id
     respond_to do |format|
       if @proposal.save
-        format.html { redirect_to :back , notice: 'پروپوزال با موفقیت اضافه شد.' }
+        format.html { redirect_to :back , notice: 'proposal added successfully !' }
         format.json { render action: 'show', status: :created, location: @proposal }
       else
-      	format.html { redirect_to :back , notice: 'خطا در ایجاد پروپوزال:‌ لطفا همه فیلدها را پر کنید.' }
+      	format.html { redirect_to :back , notice: 'Error: Please complete the blank fields.' }
         #format.html { render action: 'new' }
         format.json { render json: @proposal.errors, status: :unprocessable_entity }
       end

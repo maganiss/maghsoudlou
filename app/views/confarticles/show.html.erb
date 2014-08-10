@@ -1,44 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-primary" style="padding-top:70px">
+                    <div class="panel-body">
+        <b>عنوان: </b><%= @confarticle.title%><br>
+        <b>موضوع: </b><%= @confarticle.fa_field%><br>
+  <b>چکیده: </b><%= @confarticle.abstract%><br>
+        <b>امتیاز خبرگی: </b>
+        <% if @confarticle.expert_score.blank? %>
+        [امتیازی وارد نشده است.]
+        <br>
+        <% else %>
+                <%= @confarticle.expert_score%><br>
+        <% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @confarticle.user_id %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @confarticle.title %>
-</p>
 
-<p>
-  <strong>Abstract:</strong>
-  <%= @confarticle.abstract %>
-</p>
+        <span style="float:left">
 
-<p>
-  <strong>En field:</strong>
-  <%= @confarticle.en_field %>
-</p>
 
-<p>
-  <strong>Fa field:</strong>
-  <%= @confarticle.fa_field %>
-</p>
+                <%= form_for(@confarticle) do |f| %>
+                        <span class="field">امتیاز خبرگی
+                                <%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
+                        </span>
+                        <span class="actions">
+                                <%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
+                        </span>
+                <% end %>
 
-<p>
-  <strong>Conf name:</strong>
-  <%= @confarticle.conf_name %>
-</p>
 
-<p>
-  <strong>Conf date:</strong>
-  <%= @confarticle.conf_date %>
-</p>
+        </span>
 
-<p>
-  <strong>Conf location:</strong>
-  <%= @confarticle.conf_location %>
-</p>
 
-<%= link_to 'Edit', edit_confarticle_path(@confarticle) %> |
-<%= link_to 'Back', confarticles_path %>
+  <i class="icon-file" ></i> <%= link_to "دریافت فایل", @confarticle.attachment.url%><br>
+                                </div>
+                  </div>
+

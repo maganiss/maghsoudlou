@@ -1,29 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-primary" style="padding-top:70px">
+                    <div class="panel-body">
+        <b>عنوان: </b><%= @techreport.title%><br>
+        <b>موضوع: </b><%= @techreport.fa_field%><br>
+  <b>چکیده: </b><%= @techreport.abstract%><br>
+        <b>امتیاز خبرگی: </b>
+        <% if @techreport.expert_score.blank? %>
+        [امتیازی وارد نشده است.]
+        <br>
+        <% else %>
+                <%= @techreport.expert_score%><br>
+        <% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @techreport.user_id %>
-</p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @techreport.title %>
-</p>
 
-<p>
-  <strong>Abstract:</strong>
-  <%= @techreport.abstract %>
-</p>
+        <span style="float:left">
 
-<p>
-  <strong>En field:</strong>
-  <%= @techreport.en_field %>
-</p>
 
-<p>
-  <strong>Fa field:</strong>
-  <%= @techreport.fa_field %>
-</p>
+                <%= form_for(@techreport) do |f| %>
+                        <span class="field">امتیاز خبرگی
+                                <%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
+                        </span>
+                        <span class="actions">
+                                <%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
+                        </span>
+                <% end %>
 
-<%= link_to 'Edit', edit_techreport_path(@techreport) %> |
-<%= link_to 'Back', techreports_path %>
+
+        </span>
+
+
+  <i class="icon-file" ></i> <%= link_to "دریافت فایل", @techreport.attachment.url%><br>
+                                </div>
+                  </div>
+

@@ -28,10 +28,10 @@ class TechreportsController < ApplicationController
 	  @techreport.user_id = current_user.id
     respond_to do |format|
       if @techreport.save
-        format.html { redirect_to :back, notice: 'گزارش فنی با موفقیت اضافه شد.' }
+        format.html { redirect_to :back, notice: 'Technical report successfully added.' }
         format.json { render action: 'show', status: :created, location: @techreport }
       else
-      	format.html { redirect_to :back , notice: 'خطا در ایجاد گزارش فنی:‌ لطفا همه فیلدها را پر کنید.' }
+      	format.html { redirect_to :back , notice: 'Error: Please fill in all the blank fields.' }
         #format.html { render action: 'new' }
         format.json { render json: @techreport.errors, status: :unprocessable_entity }
       end
