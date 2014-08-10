@@ -1,4 +1,4 @@
-<div class="col-md-3" style="padding-top:70px">	
+
 	<div class="panel panel-default"  style="overflow:hidden">
 		<div class="panel-heading"><h4>لیست پیشتازان</h4></div>
 		<div class="panel-body">
@@ -10,12 +10,12 @@
 					<td><b>امتیاز</b></td>
 				</tr>
 					<% i = 0 %>
-					<% limit = 4 %>
+					<% limit = 3 %>
 					<% for user in @users %>
 					<% i += 1 %>
 				<tr>
 					<td><%= i %></td>
-					<td><%= user.profile.profile_name	 %></td>
+					<td><%= link_to user.profile.profile_name, profile_path(user.profile)	 %></td>
 					<td><%=user.points%></td>
 				</tr>
 					<% if i>= limit %> <% break %> <% end %>
@@ -28,4 +28,4 @@
 			
 		</div>
 	</div>
-</div>
+

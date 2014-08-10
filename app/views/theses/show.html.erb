@@ -1,35 +1,43 @@
-<div class="panel panel-primary" style="padding-top:70px">
-                    <div class="panel-body">
-        <b>عنوان: </b><%= @thesis.title%><br>
-        <b>موضوع: </b><%= @thesis.fa_field%><br>
+<div class="col-md-7" style="padding-top:70px;">
+	<div class="panel panel-default">
+     <div class="panel-heading"><h4>پایان نامه</h4></div>
+                  <div class="panel-body">
+              <div class="container">
+
+
+
+	
+	<b>عنوان: </b><%= @thesis.title%><br>
+	<b>موضوع: </b><%= @thesis.fa_field%><br>
   <b>چکیده: </b><%= @thesis.abstract%><br>
-        <b>امتیاز خبرگی: </b>
-        <% if @thesis.expert_score.blank? %>
-        [امتیازی وارد نشده است.]
-        <br>
-        <% else %>
-                <%= @thesis.expert_score%><br>
-        <% end %>
-
-
-
-        <span style="float:left">
-
-
-                <%= form_for(@thesis) do |f| %>
-                        <span class="field">امتیاز خبرگی
-                                <%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
-                        </span>
-                        <span class="actions">
-                                <%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
-                        </span>
-                <% end %>
-
-
-        </span>
+  	<b>امتیاز خبرگی: </b>
+  	<% if @thesis.expert_score.blank? %>
+  	[امتیازی وارد نشده است.]
+  	<br>
+  	<% else %>
+  		<%= @thesis.expert_score%><br>
+  	<% end %>
+  
 
 
   <i class="icon-file" ></i> <%= link_to "دریافت فایل", @thesis.attachment.url%><br>
-                                </div>
-                  </div>
+		  <br>
+
+	<div>
+
+		<%= form_for(@thesis) do |f| %>
+			<span class="field">امتیاز خبرگی 
+				<%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
+			</span>
+			<span class="actions">
+				<%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
+			</span>
+		<% end %>
+
+
+
+				</div>
+		  </div>
+		  </div>
+		  
 

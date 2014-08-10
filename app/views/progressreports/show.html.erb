@@ -1,35 +1,44 @@
-<div class="panel panel-primary" style="padding-top:70px">
-                    <div class="panel-body">
-        <b>عنوان: </b><%= @progressreport.title%><br>
-        <b>موضوع: </b><%= @progressreport.fa_field%><br>
+<div class="col-md-7" style="padding-top:70px;">
+	<div class="panel panel-default">
+     <div class="panel-heading"><h4>گزارش پیشرفت</h4></div>
+                  <div class="panel-body">
+              <div class="container">
+
+
+
+	
+	<b>عنوان: </b><%= @progressreport.title%><br>
+	<b>موضوع: </b><%= @progressreport.fa_field%><br>
   <b>چکیده: </b><%= @progressreport.abstract%><br>
-        <b>امتیاز خبرگی: </b>
-        <% if @progressreport.expert_score.blank? %>
-        [امتیازی وارد نشده است.]
-        <br>
-        <% else %>
-                <%= @progressreport.expert_score%><br>
-        <% end %>
+  	<b>امتیاز خبرگی: </b>
+  	<% if @progressreport.expert_score.blank? %>
+  	[امتیازی وارد نشده است.]
+  	<br>
+  	<% else %>
+  		<%= @progressreport.expert_score%><br>
+  	<% end %>
+  
 
 
-
-        <span style="float:left">
-
-
-                <%= form_for(@progressreport) do |f| %>
-                        <span class="field">امتیاز خبرگی
-                                <%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
-                        </span>
-                        <span class="actions">
-                                <%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
-                        </span>
-                <% end %>
+	<span style="float:left">
 
 
-        </span>
+		<%= form_for(@progressreport) do |f| %>
+			<span class="field">امتیاز خبرگی 
+				<%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
+			</span>
+			<span class="actions">
+				<%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
+			</span>
+		<% end %>
+
+
+	</span>
 
 
   <i class="icon-file" ></i> <%= link_to "دریافت فایل", @progressreport.attachment.url%><br>
-                                </div>
-                  </div>
+				</div>
+		  </div>
+		  </div>
+		  
 

@@ -15,10 +15,14 @@
 
 
 <body >
+<% if user_signed_in? %>
+	<%= render :partial => "home/header"%>
+	<%= render :partial => "home/sidebar"%>
+<%end%>
 
 	<%= yield %>
 	
-
+	<%= render :partial => 'home/points_status' %>
 </body>
 </html>
 

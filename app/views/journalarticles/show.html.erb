@@ -1,35 +1,46 @@
-<div class="panel panel-primary" style="padding-top:70px">
-                    <div class="panel-body">
-        <b>عنوان: </b><%= @journalarticle.title%><br>
-        <b>موضوع: </b><%= @journalarticle.fa_field%><br>
+<div class="col-md-7" style="padding-top:70px;">
+	<div class="panel panel-default">
+     <div class="panel-heading"><h4>مقاله ژورنال</h4></div>
+                  <div class="panel-body">
+              <div class="container">
+
+
+
+	
+	<b>عنوان: </b><%= @journalarticle.title%><br>
+	<b>موضوع: </b><%= @journalarticle.fa_field%><br>
   <b>چکیده: </b><%= @journalarticle.abstract%><br>
-        <b>امتیاز خبرگی: </b>
-        <% if @journalarticle.expert_score.blank? %>
-        [امتیازی وارد نشده است.]
-        <br>
-        <% else %>
-                <%= @journalarticle.expert_score%><br>
-        <% end %>
+  	<b>امتیاز خبرگی: </b>
+  	<% if @journalarticle.expert_score.blank? %>
+  	[امتیازی وارد نشده است.]
+  	<br>
+  	<% else %>
+  		<%= @journalarticle.expert_score%><br>
+  	<% end %>
+  
 
-
-
-        <span style="float:left">
-
-
-                <%= form_for(@journalarticle) do |f| %>
-                        <span class="field">امتیاز خبرگی
-                                <%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
-                        </span>
-                        <span class="actions">
-                                <%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
-                        </span>
-                <% end %>
-
-
-        </span>
 
 
   <i class="icon-file" ></i> <%= link_to "دریافت فایل", @journalarticle.attachment.url%><br>
-                                </div>
-                  </div>
+
+		  <br>
+
+	<div>
+
+		<%= form_for(@journalarticle) do |f| %>
+			<span class="field">امتیاز خبرگی 
+				<%= f.select :expert_score  ,(0..5),:class => "form-control" ,:onchange=>"this.form.submit()"%>
+			</span>
+			<span class="actions">
+				<%= f.submit "ثبت", :class => "btn btn-xs", :style =>"background-color:#EBEBE0;color:black;border:solid 1px white" %>
+			</span>
+		<% end %>
+
+
+	</div>
+
+				</div>
+		  </div>
+		  </div>
+		  
 

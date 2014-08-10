@@ -1,0 +1,45 @@
+<div class="panel panel-default"  style="overflow:hidden">
+	<div class="panel-heading"><h4>افزودن محتوا</h4></div>
+	<div class="panel-body">
+برای افزودن محتوا اینجا کلیک کنید.<br>
+توجه: همه فیلدهای خواسته شده را با دقت پر کنید. ضمیمه (فایل آپلود شده)‌می بایست حتما پی دی اف باشد.<br><br>
+		<div class="col-md-4"></div>
+		<button class="col-md-4 btn btn-primary btn-lg" data-toggle="modal" data-target="#addcontent" >
+افزودن محتوا			
+		</button>
+	</div>
+</div>
+
+
+
+<div class="modal fade" id="addcontent" tabindex="-1" role="dialog" aria-labelledby="proposalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="panel panel-default"  style="overflow:hidden">
+			<div class="panel-body">
+				<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+        <div class="tabbable">
+          <ul class="nav nav-tabs" style="padding-right:0px;">
+            <li class="active"><a href="#one" data-toggle="tab">پروپوزال</a></li>
+            <li><a href="#two" data-toggle="tab">گزارش فنی</a></li>
+            <li><a href="#twee" data-toggle="tab">گزارش پیشرفت</a></li>
+            <li><a href="#four" data-toggle="tab">پایان نامه</a></li>
+            <li><a href="#five" data-toggle="tab">مقاله ژورنال</a></li>
+            <li><a href="#six" data-toggle="tab">مقاله کنفرانس</a></li>
+            <li><a href="#seven" data-toggle="tab">ارائه</a></li>
+          </ul>
+          <div class="tab-content">
+            <div class="tab-pane active" id="one"><%= render :partial => 'proposals/form'%></div>
+            <div class="tab-pane" id="two">	<%= render :partial => 'techreports/form' %></div>
+            <div class="tab-pane" id="twee"><%= render :partial => 'progressreports/form' %></div>
+            <div class="tab-pane" id="four"><%= render :partial => 'theses/form' %></div>
+            <div class="tab-pane" id="five"><%= render :partial => 'journalarticles/form' %></div>
+            <div class="tab-pane" id="six"><%= render :partial => 'confarticles/form' %></div>
+            <div class="tab-pane" id="seven"><%= render :partial => 'presentations/form' %></div>
+           </div>
+        </div>
+		   
+		   </div>
+		</div>
+	</div>
+</div>

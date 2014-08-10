@@ -1,62 +1,62 @@
 <% if !@fffs.blank?%>
 <div class="panel panel-default"  style="overflow:hidden">
-		<div class="panel-heading"><h4>محتواهای امتیازدهی نشده</h4></div>
+	<div class="panel-heading"><h4>محتواهای امتیازدهی نشده</h4></div>
 		<div class="panel-body" >
 			<%= paginate @fffs%><br>
 			<% for fff in @fffs%>
 
-<% @tempnot = fff.notifiable_type.classify.constantize.find(fff.notifiable_id) %>
+				<% @tempnot = fff.notifiable_type.classify.constantize.find(fff.notifiable_id) %>
 
-<% if fff.notifiable_type == "Proposal"%>
-<% @notpathe = proposal_path(@tempnot) %>
-<% end %>
-<% if fff.notifiable_type == "Progressreport"%>
-<% @notpathe = progressreport_path(@tempnot) %>
-<% end %>
-<% if fff.notifiable_type == "Techreport"%>
-<% @notpathe = techreport_path(@tempnot) %>
-<% end %>
-<% if fff.notifiable_type == "Presentation"%>
-<% @notpathe = presentation_path(@tempnot) %>
-<% end %>
-<% if fff.notifiable_type == "Thesis"%>
-<% @notpathe = thesis_path(@tempnot) %>
-<% end %>
-<% if fff.notifiable_type == "Journalarticle"%>
-<% @notpathe = journalarticle_path(@tempnot) %>
-<% end %>
-<% if fff.notifiable_type == "Confarticle"%>
-<% @notpathe = confarticle_path(@tempnot) %>
-<% end %>
+				<% if fff.notifiable_type == "Proposal"%>
+				<% @notpathe = proposal_path(@tempnot) %>
+				<% end %>
+				<% if fff.notifiable_type == "Progressreport"%>
+				<% @notpathe = progressreport_path(@tempnot) %>
+				<% end %>
+				<% if fff.notifiable_type == "Techreport"%>
+				<% @notpathe = techreport_path(@tempnot) %>
+				<% end %>
+				<% if fff.notifiable_type == "Presentation"%>
+				<% @notpathe = presentation_path(@tempnot) %>
+				<% end %>
+				<% if fff.notifiable_type == "Thesis"%>
+				<% @notpathe = thesis_path(@tempnot) %>
+				<% end %>
+				<% if fff.notifiable_type == "Journalarticle"%>
+				<% @notpathe = journalarticle_path(@tempnot) %>
+				<% end %>
+				<% if fff.notifiable_type == "Confarticle"%>
+				<% @notpathe = confarticle_path(@tempnot) %>
+				<% end %>
 
 
 
-<% if fff.notifiable_type == "Proposal"%>
-<% @notpath = "proposals/proposal_modal" %> 
-<% end %>
-<% if fff.notifiable_type == "Progressreport"%>
-<% @notpath = "progressreports/progressreport_modal" %>
-<% end %>
-<% if fff.notifiable_type == "Techreport"%>
-<% @notpath = "techreports/techreport_modal" %>
-<% end %>
-<% if fff.notifiable_type == "Presentation"%>
-<% @notpath = "presentations/presentation_modal" %>
-<% end %>
-<% if fff.notifiable_type == "Thesis"%>
-<% @notpath = "theses/thesis_modal" %>
+				<% if fff.notifiable_type == "Proposal"%>
+				<% @notpath = "proposals/proposal_modal" %> 
+				<% end %>
+				<% if fff.notifiable_type == "Progressreport"%>
+				<% @notpath = "progressreports/progressreport_modal" %>
+				<% end %>
+				<% if fff.notifiable_type == "Techreport"%>
+				<% @notpath = "techreports/techreport_modal" %>
+				<% end %>
+				<% if fff.notifiable_type == "Presentation"%>
+				<% @notpath = "presentations/presentation_modal" %>
+				<% end %>
+				<% if fff.notifiable_type == "Thesis"%>
+				<% @notpath = "theses/thesis_modal" %>
 
-<% end %>
-<% if fff.notifiable_type == "Journalarticle"%>
-<% @notpath = "journalarticles/journalarticle_modal" %>
-<% end %>
-<% if fff.notifiable_type == "Confarticle"%>
-<% @notpath = "confarticles/confarticle_modal" %>
-<% end %>
+				<% end %>
+				<% if fff.notifiable_type == "Journalarticle"%>
+				<% @notpath = "journalarticles/journalarticle_modal" %>
+				<% end %>
+				<% if fff.notifiable_type == "Confarticle"%>
+				<% @notpath = "confarticles/confarticle_modal" %>
+				<% end %>
 
 			<div class="alert-message info">
-				کاربر <%= User.find_by_id(@tempnot.user_id).profile.profile_name%> یک <%=t fff.notifiable_type%> با نام <%=link_to @tempnot.title, @notpathe%> ایجاد کرده است.
-			<span style="font-size:10px; float:left"><%=@tempnot.created_at.year%>/<%=@tempnot.created_at.month%>/<%=@tempnot.created_at.day%> ساعت <%= @tempnot.created_at.hour%> و <%=@tempnot.created_at.min%> دقیقه</span>
+					کاربر <%= User.find_by_id(@tempnot.user_id).profile.profile_name%> یک <%=t fff.notifiable_type%> با نام <%=link_to @tempnot.title, @notpathe%> ایجاد کرده است.
+				<span style="font-size:10px; float:left"><%=@tempnot.created_at.year%>/<%=@tempnot.created_at.month%>/<%=@tempnot.created_at.day%> ساعت <%= @tempnot.created_at.hour%> و <%=@tempnot.created_at.min%> دقیقه</span>
 
 <!--			<a class="btn btn-primary" data-toggle="modal" data-target="#<%=fff.notifiable_type%>" data-original-title>
 مشاهده و امتیاز دهی
@@ -70,3 +70,4 @@
 		</div>
 	</div>
 <% end %>
+</div>
