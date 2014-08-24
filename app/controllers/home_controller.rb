@@ -24,19 +24,11 @@ class HomeController < ApplicationController
 
 	end
 
-   @fs = Array.new
+
    if user_signed_in?
    	@profile = current_user.profile
 		@friendships = current_user.friendships.find(:all)
 		@self_notifications = current_user.notifications.find(:all, :order => 'created_at DESC')
-		@friend_notifications = Notification.find_friends_notifications(current_user)
-		
-		for f in @friend_notifications
-			if ((f.notifiable_type.classify.constantize.find(f.notifiable_id)).expert_score).blank?
-				@fs.push(f)
-			end
-		end
-	  @fffs = Kaminari.paginate_array(@fs).page(params[:page]).per(5)
    end
      
  	

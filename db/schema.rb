@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140804054947) do
+ActiveRecord::Schema.define(version: 20140811210323) do
 
   create_table "activitycalories", force: true do |t|
     t.integer  "activity_id"
@@ -268,6 +268,10 @@ ActiveRecord::Schema.define(version: 20140804054947) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.string   "profile_gradstat"
+    t.string   "level_of_education"
+    t.integer  "entrance_year"
+    t.string   "field"
+    t.string   "sub_field"
   end
 
   create_table "progressreports", force: true do |t|

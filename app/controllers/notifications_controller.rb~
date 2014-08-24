@@ -1,7 +1,10 @@
 class NotificationsController < ApplicationController
   before_action :set_notification, only: [:show, :edit, :update, :destroy]
 
-
+  def not_rated_notifs
+  end
+  
+  
   def newsfeed
     @profile = current_user.profile
     @friend_notifications = Notification.find_friends_notifications(current_user)
@@ -12,7 +15,7 @@ class NotificationsController < ApplicationController
   def index
     @notifications = Notification.all
     @friend_notifications = Notification.find_friends_notifications(current_user)
-    @fffs = Notification.order("created_at").page(params[:page]).per(5)
+
   end
 
   # GET /notifications/1
@@ -64,7 +67,7 @@ class NotificationsController < ApplicationController
   def destroy
     @notification.destroy
     respond_to do |format|
-      format.html { redirect_to :back , notice: 'محتوا با موفقیت حذف شد.' }
+      format.html { redirect_to :back , notice: 'Content successfully added.' }
       format.json { head :no_content }
     end
   end

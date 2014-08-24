@@ -1,25 +1,38 @@
-<div class="col-md-3" style="padding-top:70px">	
 <div class="panel panel-default"  style="overflow:hidden">
-		<div class="panel-heading"><h4>وضعیت امتیازات</h4></div>
-		<div class="panel-body">
-			<div class = "col-md-8">
-				<% point_view = "امتیاز اشتراک دانش: #{current_user.points}" %>
-				<a class="btn btn-lg btn-success" data-toggle="modal" data-target="#contact" data-original-title>
-					<%= point_view%>	
-				</a>
-				
+	<div class="panel-heading"><h4>وضعیت امتیازات</h4></div>
+	<div class="panel-body">
+		<div class="col-md-4">	
+			<% point_view = "امتیاز اشتراک دانش: #{current_user.points}" %>
+			<a class="btn btn-success"><%= point_view%></a>
 
-				<%= render :partial => 'home/points_modal'%>
-	<!--		  <%= link_to "مدال های شما: ۳", new_profile_path, :class =>"btn btn-lg btn-warning" %><br> -->		
-				      			
-			</div>
-				<div class = "col-md-8">
-				
-				<div id="myStat1" data-dimension="220" data-text="15%" data-info="نشان شوالیه دانش" data-width="30" data-fontsize="30" data-percent="35" data-fgcolor="#a9dc61" data-bgcolor="#eee" data-fill="#ddd" data-total="200" data-part="15" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff"></div>
-				
+			<%= render :partial => 'home/points_modal'%>
 
-				
-<style>
+
+
+			<div id="myStat1" data-dimension="120" data-text="35%" data-info="شوالیه دانش" data-width="10" data-fontsize="20" data-percent="35" data-fgcolor="#a9dc61" data-bgcolor="#eee" data-fill="#ddd" data-total="200" data-part="35" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff" style="padding-top:10px;"></div>			
+	
+		</div>
+		<div class="col-md-8">
+		<div class="col-md-5" style="padding-top:30px;" ><%= image_tag "soldier.png", :alt => "rss feed" , :size => "80x80" , :style => "overflow:hidden; border-radius:90%", title:'شما سرباز دانش هستید.'%><br><br>شما سرباز دانش هستید.</div>
+		
+		<div class="col-md-5" style="padding-top:30px;" ><a href="#"><%= image_tag "market.png", :alt => "rss feed" , :size => "80x80" ,:style => "overflow:hidden; border-radius:90%", title:'با امتیازات خود از اینجا خرید کنید!'%></a><br><br>با امتیازات خود از اینجا خرید کنید!</div>
+	
+		</div>
+		
+		<!--
+			<br>
+      <div class="btn btn-xs btn-danger"></div>امتیاز اشتراک دانش<br>
+      <div class="btn btn-xs btn-info"></div>امتیاز خبرگی<br><br>
+
+			<div class="progress">
+	      <div class="progress-bar progress-bar-info" style="width: 35%"><span class="sr-only">35% Complete (info)</span></div>
+	      <div class="progress-bar progress-bar-danger" style="width: 65%"><span class='sr-only'>65% Complete (danger)</span></div>
+	    </div>-->
+	</div>
+</div>
+	
+	
+	<style>
 
 .circliful {
     position: relative; 
@@ -303,18 +316,4 @@
     };
 }(jQuery));
 </script>
-			
-			
-			<!--
-				<br>
-	      <div class="btn btn-xs btn-danger"></div>امتیاز اشتراک دانش<br>
-	      <div class="btn btn-xs btn-info"></div>امتیاز خبرگی<br><br>
 
-				<div class="progress">
-		      <div class="progress-bar progress-bar-info" style="width: 35%"><span class="sr-only">35% Complete (info)</span></div>
-		      <div class="progress-bar progress-bar-danger" style="width: 65%"><span class='sr-only'>65% Complete (danger)</span></div>
-		    </div>-->
-			</div>
-	  </div>
-	</div>
-</div>

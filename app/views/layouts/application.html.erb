@@ -15,13 +15,19 @@
 
 
 <body >
-<% if user_signed_in? %>
+
+<% if user_signed_in? && !current_user.profile.blank? %>
 	<%= render :partial => "home/header"%>
 	<%= render :partial => "home/sidebar"%>
+	<div class="col-md-7" style="padding-top:70px;">
+	<%= yield %>
+	</div>
+<%= render :partial => "home/endbar"%>
+	
+<% else %>
+	<%= yield %>
 <%end%>
 
-	<%= yield %>
-	
 
 </body>
 </html>

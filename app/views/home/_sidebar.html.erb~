@@ -1,8 +1,10 @@
 <% if @profile.blank? %> <%@profile = current_user.profile%><% end %>
 <% if !@profile.blank? %>
-<div class="col-md-2" style="padding-top:70p">
+<div class="col-md-2" style="padding-top:70px; margin-right:4%">
 	<%= render :partial => "profiles/ratingcard"%>
-	<%= render :partial => "friendships/followed", :object => @profile%>
+<%= render :partial => "friendships/followed", :object => @profile%>
 </div>
+
+current_user.add_badge(1)
 
 <% end %>

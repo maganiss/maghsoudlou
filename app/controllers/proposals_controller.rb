@@ -36,6 +36,7 @@ class ProposalsController < ApplicationController
         format.json { render json: @proposal.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /proposals/1

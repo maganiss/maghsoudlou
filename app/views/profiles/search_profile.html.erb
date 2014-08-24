@@ -1,26 +1,26 @@
-
-<div class="col-md-7" style="padding-top:70px;">
-
 <div class="panel panel-default">
 	<div class="panel-body">
-		<div class="col-md-12">
-		<%= form_tag 'search_profile', :method =>:get , :id => 'search_form' do %>
-	      نام
-	      <%= text_field_tag :q %>
-          <%= submit_tag "جستجو" , :class => "btn btn-primary"%>  
+	
+	<%= form_tag 'search_profile', :method =>:get , :id => 'search_form' do %>
+		نام
+		<%= text_field_tag :q %>
+					<%= submit_tag "جستجو" , :class => "btn btn-primary"%>  
 		<% end %><br>
-	    <% if !@profiles.blank? %>
-			<p><h3>نتایج جستجو:</h3></p><br>
-			<% @profiles.each do |profile| %>
-				<p><li>
-				<%= link_to profile.profile_name , profile_path(profile), :style =>"color:green" %>
-				</li></p>
-			<% end %>
+		<% if !@profiles.blank? %>
+		
+		<p><h3>نتایج جستجو:</h3></p><br>
+		
+		<% @profiles.each do |profile| %>
+			<p><li>
+			<%= link_to profile.profile_name , profile_path(profile), :style =>"color:green" %>
+			</li></p>
+		<% end %>
 		<% else %>
 			<%= link_to 'بازگشت به خانه', home_index_path, :class => 'navbar-link', :method => :get %>
-		<% end %>
-		</div>	
-	</div>
+	<% end %>
+	
+	</div>	
 </div>
+
 
 

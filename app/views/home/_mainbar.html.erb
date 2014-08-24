@@ -1,11 +1,7 @@
-<div class="col-md-7" style="padding-top:70px;">  
-	<%= render partial: "home/flash_messages", flash: flash %> 
+<%= render partial: "home/flash_messages", flash: flash %> 
+<%= render :partial => 'home/points_status' %>		
+<%= render :partial => 'profiles/leaderboard'%>
+</div><div class="col-md-2" style="padding-top:70px">	<%= render :partial => 'home/add_content' %></div>
 
 
-	<%= render :partial => 'profiles/leaderboard'%>
-<%= render :partial => 'home/add_content' %>
-<%= render :partial => 'notifications/new_content' %>
-</div>
-
-	<%= render :partial => 'home/points_status' %>		
 <body class="bgbook"></body>

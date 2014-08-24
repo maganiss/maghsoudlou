@@ -1,52 +1,13 @@
-
-<div class="col-md-7" style="padding-top:70px;">
-
-		<div class="panel panel-default">
-		<div class="panel-body">
-
-
-				<%= render :partial => "friendships/add_friend_button", :object => @profile.user %>
-
-				<div class="col-md-12">
-									<%= render partial: "home/flash_messages", flash: flash %> 
-						<p>
-							<strong>نام:</strong>
-							<%= @profile.profile_name %>
-						</p>
-
-						<p>
-							<strong>وضعیت تحصیلی:</strong>
-							<%= @profile.profile_gradstat %>
-						</p>
-
-						<p>
-							<strong>تاریخ تولد:</strong>
-							<%= @profile.profile_birth_date.day %> /  <%= @profile.profile_birth_date.month %>/   <%= @profile.profile_birth_date.year %>
-						</p>
-
-						<p>
-							<strong>جنسیت:</strong>
-							<%	if @profile.profile_gender === 0 %> زن 
-							<%else%> مرد 
-							<%end%>
-						</p>
-
-						<p>
-							<strong>امتیاز:</strong>
-							<%= (User.find_by_id(@profile.user_id)).points%>
-						</p>
-
-						<br><br>
-						<% if @profile == current_user.profile %>
-						<%= render :partial => "notifications/myposts"  , :object => @self_notifications%>
-						<% else %>
-						<% @self_notifications = @prof_notifications %>
-						<%= render :partial => "notifications/myposts"  , :object => @self_notifications%>
-						<% end %>
-				</div>
-		</div>
-</div>
-</div>
-	<div class="col-md-3" style="padding-top:70px">
-	<%= render :partial => 'friendships/followed'%>
+<div class="panel panel-default">
+	<div class="panel-heading"><h4>محتواهای به اشتراک گذاشته شده توسط کاربر</h4></div>
+	<div class="panel-body">
+		<%= render :partial => "friendships/add_friend_button", :object => @profile.user %>
+		<%= render :partial => "home/flash_messages", flash: flash %> <br>
+		<% if @profile == current_user.profile %>
+			<%= render :partial => "notifications/myposts"  , :object => @self_notifications%>
+		<% else %>
+			<% @self_notifications = @prof_notifications %>
+			<%= render :partial => "notifications/myposts"  , :object => @self_notifications%>
+		<% end %>
 	</div>
+</div>

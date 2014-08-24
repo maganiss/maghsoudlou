@@ -19,6 +19,12 @@ Merit.setup do |config|
   # config.current_user_method = 'current_user'
 end
 
+
+Merit::Badge.create!(
+  id: 1,
+  name: 'just-registered'
+)
+
 # Create application badges (uses https://github.com/norman/ambry)
 # badge_id = 0
 # [{

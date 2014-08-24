@@ -15,6 +15,12 @@ module Merit
     include Merit::RankRulesMethods
 
     def initialize
+    
+    	set_rank :level => 2 :to => current_user do |user|
+    		user.points >= 5
+    	end
+    	
+			
       # set_rank :level => 1, :to => Commiter.active do |commiter|
       #   commiter.repositories.count > 1 && commiter.followers >= 10
       # end

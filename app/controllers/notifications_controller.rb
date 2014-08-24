@@ -1,7 +1,21 @@
 class NotificationsController < ApplicationController
   before_action :set_notification, only: [:show, :edit, :update, :destroy]
 
-
+  def not_rated_notifs
+    if user_signed_in?
+		@fs = Array.new
+		@friend_notifications = Notification.find_friends_notifications(current_user)
+		
+		for f in @friend_notifications
+			if ((f.notifiable_type.classify.constantize.find(f.notifiable_id)).expert_score).blank?
+				@fs.push(f)
+			end
+		end
+	  @fffs = Kaminari.paginate_array(@fs).page(params[:page]).per(5)
+   end
+  end
+  
+  
   def newsfeed
     @profile = current_user.profile
     @friend_notifications = Notification.find_friends_notifications(current_user)

@@ -23,7 +23,9 @@ UserReady::Application.routes.draw do
   match "/friendships/remove_friend/:id" => "friendships#remove_friend", :via => :get
   match "/profiles/search_profile" => "profiles#search_profile", :via => :get
   match "/notifications/newsfeed" => "notifications#newsfeed", :via => :get
+  match "/notifications/not_rated_notifs" => "notifications#not_rated_notifs", :via => :get
   match '/help' => 'pages#help', :via => :get
+  
 
 
   resources :friendships
@@ -38,6 +40,7 @@ UserReady::Application.routes.draw do
   
 
   devise_for :users
+  
   #, :skip => [:sessions]
   #as :user do
   #  get 'signin' => 'devise/sessions#new', :as => :new_user_session

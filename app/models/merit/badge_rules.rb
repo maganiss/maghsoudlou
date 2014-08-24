@@ -29,6 +29,11 @@ module Merit
       # grant_on 'comments#create', badge: 'commenter', level: 10 do |comment|
       #   comment.user.comments.count == 10
       # end
+     	grant_on 'proposal#create', :badge => 'relevant-commenter', :to => :user do |proposal|
+  			user.proposal.count == 2
+			end
+			
+			grant_on 'users/registrations#create', badge: 'just-registered', model_name: 'User'
 
       # If it has 5 votes, grant relevant-commenter badge
       # grant_on 'comments#vote', badge: 'relevant-commenter',

@@ -1,17 +1,16 @@
-<div class="col-md-2" style="padding-top:70px">
-	<div class="panel panel-default"  style="overflow:hidden">
-		  <div class="panel-heading">
-		 		<h4><%=t :students %><% if @profile.user === current_user%> <%=t :you %> <% else %> <%= @profile.profile_name%> <% end %></h4>
-		  </div>
+<div class="panel panel-default"  style="overflow:hidden">
+	<div class="panel-heading">
+		 <h4><%=t :students %><% if @profile.user === current_user%> <%=t :you %> <% else %> <%= @profile.profile_name%> <% end %></h4>
+	</div>
 		  
-		  <div class="panel-body">
-			<% for friend in @profile.user.friends%>
-				<% if !friend.blank?%>
-					<p><%= link_to friend.profile.profile_name, profile_path(friend.profile)%></p>
-				<%end%>
+	<div class="panel-body">
+		<% for friend in @profile.user.friends%>
+			<% if !friend.blank?%>
+				<p><%= link_to friend.profile.profile_name, profile_path(friend.profile)%></p>
 			<%end%>
-		  </div>
+		<%end%>
 	</div>
 </div>
+
 	
 	
