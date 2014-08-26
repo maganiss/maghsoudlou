@@ -1,9 +1,9 @@
 <%= render partial: "home/flash_messages", flash: flash %> 
-<% if !@fffs.blank?%>
+
 <div class="panel panel-default"  style="overflow:hidden">
 	<div class="panel-heading"><h4>محتواهای امتیازدهی نشده</h4></div>
 		<div class="panel-body" >
-
+<% if !@fffs.blank?%>
 			<%= paginate @fffs%><br>
 			<% for fff in @fffs%>
 
@@ -71,7 +71,9 @@
 			</div>
 			<% end %>
 			<% end %>
+			<% else %>
+			هیچ محتوای امتیاز دهی نشده ای وجود ندارد.
+			<% end %>
 		</div>
 	</div>
-<% end %>
 </div>

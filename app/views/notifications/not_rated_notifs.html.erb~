@@ -1,4 +1,4 @@
-<div class="col-md-7" style="padding-top:70px;">
+<%= render partial: "home/flash_messages", flash: flash %> 
 <% if !@fffs.blank?%>
 <div class="panel panel-default"  style="overflow:hidden">
 	<div class="panel-heading"><h4>محتواهای امتیازدهی نشده</h4></div>
@@ -74,5 +74,4 @@
 		</div>
 	</div>
 <% end %>
-</div>
 </div>
