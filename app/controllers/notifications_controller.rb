@@ -7,8 +7,9 @@ class NotificationsController < ApplicationController
 		@friend_notifications = Notification.find_friends_notifications(current_user)
 		
 		for f in @friend_notifications
-			if ((f.notifiable_type.classify.constantize.find(f.notifiable_id)).expert_score).blank?
-				@fs.push(f)
+			@fscore = (f.notifiable_type.classify.constantize.find(f.notifiable_id)).expert_score
+			if @fscore==0 or @fscore.blank?
+		  		 @fs.push(f)
 			end
 		end
 	  @fffs = Kaminari.paginate_array(@fs).page(params[:page]).per(5)

@@ -9,14 +9,39 @@
 
 
 
-			<div id="myStat1" data-dimension="120" data-text="35%" data-info="شوالیه دانش" data-width="10" data-fontsize="20" data-percent="35" data-fgcolor="#a9dc61" data-bgcolor="#eee" data-fill="#ddd" data-total="200" data-part="35" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff" style="padding-top:10px;"></div>			
+<% if current_user.points< 101%>
+	<% title = "طلب"%>
+	<% titleplus = "عشق"%>
+	<% percent = current_user.points %>
+<% elsif current_user.points< 201 %>
+	<% title = "عشق"%>
+	<% titleplus = "محو"%>
+	<% percent = (current_user.points-100) %>
+<% elsif current_user.points< 301 %>
+	<% title = "محو"%>
+	<% titleplus = "فنا"%>
+	<% percent = (current_user.points-200) %>
+<% else%>
+	<% title = "فنا"%>
+	<% percent = (current_user.points-300) %>
+<% end %>
+
+
+			<div id="myStat1" data-dimension="160" data-text="<%=	percent%>%" data-info="<%=title%>" data-width="10" data-fontsize="20" data-percent="<%=percent%>" data-fgcolor="#a9dc61" data-bgcolor="#eee" data-fill="#ddd" data-total="100" data-part="<%=percent%>" data-icon="long-arrow-up" data-icon-size="28" data-icon-color="#fff" style="padding-top:10px;"></div>			
 	
 		</div>
+		<div class="col-md-1"></div>
 		<div class="col-md-8">
-		<div class="col-md-5" style="padding-top:30px;" ><%= image_tag "soldier.png", :alt => "rss feed" , :size => "80x80" , :style => "overflow:hidden; border-radius:90%", title:'شما سرباز دانش هستید.'%><br><br>شما سرباز دانش هستید.</div>
+		<!--<div class="col-md-5" style="padding-top:30px;" ><%= image_tag "soldier.png", :alt => "rss feed" , :size => "80x80" , :style => "overflow:hidden; border-radius:90%", title:'به زودی...'%><br><br>شما سرباز دانش هستید.</div>-->
+
 		
-		<div class="col-md-5" style="padding-top:30px;" ><a href="#"><%= image_tag "market.png", :alt => "rss feed" , :size => "80x80" ,:style => "overflow:hidden; border-radius:90%", title:'با امتیازات خود از اینجا خرید کنید!'%></a><br><br>با امتیازات خود از اینجا خرید کنید!</div>
-	
+		<div class="col-md-6" style="padding-top:30px;" ><a href="#"><%= image_tag "market.png", :alt => "rss feed" , :size => "180x80" ,:style => "overflow:hidden; border-radius:1%", title:'به زودی...'%></a><br><br>با امتیازات خود از اینجا خرید کنید!</div>
+
+		
+				
+		<div class="col-md-6" style="padding-top:30px;" ><%= image_tag "Next_Level_Training_Logo.jpg", :alt => "rss feed" , :size => "180x80" ,:style => "overflow:hidden; border-radius:5%"%><br><br> شما برای رسیدن به مرحله <%= titleplus %> باید <%= 100 - percent %> امتیاز دیگر دریافت کنید!</div>
+		
+		
 		</div>
 		
 		<!--

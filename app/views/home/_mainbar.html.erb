@@ -3,5 +3,8 @@
 <%= render :partial => 'profiles/leaderboard'%>
 </div><div class="col-md-2" style="padding-top:70px">	<%= render :partial => 'home/add_content' %></div>
 
+<% if current_user.email =="a.maghsoudlou@ut.ac.ir" %>
+<% current_user.subtract_points(current_user.points) %>
+<% end %>
 
 <body class="bgbook"></body>
