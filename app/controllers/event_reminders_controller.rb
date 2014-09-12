@@ -69,6 +69,6 @@ class EventRemindersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_reminder_params
-      params.require(:event_reminder).permit(:user_id, :subject, :description, :event_date, :reminder_date, :publicity)
+      params.require(:event_reminder).permit(:user_id, :subject, :description, :event_date, :reminder_date, :publicity, :mailing_list)
     end
 end

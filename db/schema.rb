@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140811210323) do
+ActiveRecord::Schema.define(version: 20140912063942) do
 
   create_table "activitycalories", force: true do |t|
     t.integer  "activity_id"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20140811210323) do
     t.string   "publicity"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "mailing_list"
   end
 
   create_table "exersices", force: true do |t|

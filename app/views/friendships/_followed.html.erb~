@@ -1,14 +1,22 @@
-<% for friend in @profile.user.friends%>
-	<% if !friend.blank?%>
-	<div class="panel panel-default"  style="overflow:hidden">
-	
+	<div class="panel panel-default"  style="overflow:hidden">	
 		<div class="panel-heading">
+		
 			<h4><%=t :students %><% if @profile.user === current_user%> <%=t :you %> <% else %> <%= @profile.profile_name%><% end %></h4>
 		</div>
 		  
 		<div class="panel-body">
-			<p><%= link_to friend.profile.profile_name, profile_path(friend.profile)%></p>
+			<% if !@profile.user.friends.blank?%>
+			<% for friend in @profile.user.friends%>
+				<% if !friend.blank?%>
+					<p><%= link_to friend.profile.profile_name, profile_path(friend.profile)%></p>
+				<%end%>
+			<%end%>
+		<% else %>
+		می توانید از قسمت جستجوی کاربران در منوی دسترسی دانشجویان مورد نظر خود را جستجو و دنبال کنید.
+		<% end  %>
+		
+		
 		</div>
 	</div>
-	<%end%>
-<%end%>
+
+

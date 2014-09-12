@@ -56,6 +56,39 @@
 					<%= f.radio_button :publicity, true, :checked => true %><br>
 					<%= f.label :publicity, "خیر", :value => "private" %>
 					<%= f.radio_button :publicity, false %>
+					
+					<div id="send_to_one">
+					
+					
+				<div class="control-group">
+				  <label class="control-label" for="passwordinput">ایمیل کاربرانی به جز خودتان که میخواهید این رویداد برای آن ها قابل دیدن باشد:</label>
+					<div class="controls">
+							<%= f.text_area :mailing_list , :class => "form-control input-medium" %>
+					</div>
+				</div>
+			
+	<h6 style="color:red;">با کاما (,) جدا کنید. ایمیل وارد شده حتما باید مربوط به کاربری از این سیستم باشد. می توانید این قسمت را خالی بگذارید.</h6>				
+
+  </div>
+
+  
+<script>  
+  $(document).ready(function(){
+
+    $("#send_to_one").hide();
+    
+    $("input:radio[id='event_reminder_publicity_false']").change(function(){  
+
+            if(this.value == 'false' && this.checked){
+              $("#send_to_one").show();
+            }else{
+              $("#send_to_one").hide();
+            }
+
+    });
+
+});
+</script>
 				</div>
 				
 				<div class="control-group">

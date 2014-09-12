@@ -23,18 +23,18 @@
 
         <div class="tabbable">
           <ul class="nav nav-tabs" style="padding-right:0px;">
-            <li class="active"><a href="#one" data-toggle="tab">پروپوزال</a></li>
+            <li class="active"><a href="#one" data-toggle="tab">گزارش پیشرفت</a></li>
             <li><a href="#two" data-toggle="tab">گزارش فنی</a></li>
-            <li><a href="#twee" data-toggle="tab">گزارش پیشرفت</a></li>
+            <li><a href="#twee" data-toggle="tab">پروپوزال</a></li>
             <li><a href="#four" data-toggle="tab">پایان نامه</a></li>
             <li><a href="#five" data-toggle="tab">مقاله ژورنال</a></li>
             <li><a href="#six" data-toggle="tab">مقاله کنفرانس</a></li>
             <li><a href="#seven" data-toggle="tab">ارائه</a></li>
           </ul>
           <div class="tab-content">
-            <div class="tab-pane active" id="one"><%= render :partial => 'proposals/form'%></div>
+            <div class="tab-pane active" id="one"><%= render :partial => 'progressreports/form' %></div>
             <div class="tab-pane" id="two">	<%= render :partial => 'techreports/form' %></div>
-            <div class="tab-pane" id="twee"><%= render :partial => 'progressreports/form' %></div>
+            <div class="tab-pane" id="twee"><%= render :partial => 'proposals/form'%></div>
             <div class="tab-pane" id="four"><%= render :partial => 'theses/form' %></div>
             <div class="tab-pane" id="five"><%= render :partial => 'journalarticles/form' %></div>
             <div class="tab-pane" id="six"><%= render :partial => 'confarticles/form' %></div>
